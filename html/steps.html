@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Process</title>
+    <!-- Font Awesome for icons (e.g., the arrow icon) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9; /* Light background color */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Main Container for the entire section */
+        .container {
+            max-width: 1000px; /* Max width for the content area */
+            margin: 0 auto; /* Center the container on the page */
+            padding: 20px;
+            background: #fff; /* White background for the content card */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            border-radius: 8px; /* Rounded corners */
+        }
+
+        /* Grid for the donation process steps and info section */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Default 3 columns for larger screens */
+            gap: 30px; /* Space between grid items */
+        }
+
+        /* Explicit placement for desktop layout to match the video */
+        .step-item:nth-child(1) { grid-column: 1; grid-row: 1; }
+        .step-item:nth-child(2) { grid-column: 2; grid-row: 1; }
+        .step-item:nth-child(3) { grid-column: 3; grid-row: 1; }
+        .step-item:nth-child(4) { grid-column: 1; grid-row: 2; }
+        .step-item:nth-child(5) { grid-column: 2; grid-row: 2; }
+
+        /* Styling for each step item */
+        .step-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align text to the left */
+        }
+
+        .step-item h3 {
+            font-size: 1.5em;
+            color: #8B0000; /* Dark red, matching the video's headings */
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .step-item p {
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .step-item img {
+            max-width: 100%; /* Ensure images are responsive within their column */
+            height: auto;
+            border-radius: 8px; /* Rounded corners for images */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for images */
+            display: block; /* Remove extra space below image */
+        }
+
+        /* Styling for the "Find out more" section */
+        .info-section {
+            grid-column: 3; /* Position in the third column */
+            grid-row: 2;    /* Position in the second row, aligning with Step 4 & 5 */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Align content to the top */
+            padding-top: 5px; /* Slight adjustment for visual alignment */
+        }
+
+        .info-section h2 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            font-weight: normal; /* As seen in the video, not bold */
+        }
+
+        .info-link {
+            color: #8B0000; /* Dark red for the link */
+            text-decoration: none; /* Remove default underline */
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between icon and text */
+            margin-top: 10px;
+            border-bottom: 2px solid #8B0000; /* Underline effect as seen in video */
+            padding-bottom: 5px; /* Space for the underline */
+            width: fit-content; /* Ensures the underline only covers the text and icon */
+            transition: color 0.2s ease; /* Smooth transition for hover effect */
+        }
+
+        .info-link i {
+            font-size: 1.2em; /* Size of the arrow icon */
+        }
+
+        .info-link:hover {
+            color: #B22222; /* Slightly lighter red on hover */
+        }
+
+        /* Styling for the bottom heading ("Useful information...") */
+        .bottom-heading {
+            font-size: 1.8em;
+            color: #333;
+            margin-top: 40px; /* Space above the heading */
+            margin-bottom: 20px;
+            text-align: left;
+            font-weight: normal; /* As seen in the video */
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 900px) {
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+            }
+            /* Reset explicit grid placement for medium screens to allow natural flow */
+            .step-item, .info-section {
+                grid-column: auto;
+                grid-row: auto;
+            }
+            /* Adjust the order for 2-column layout if necessary, or let it flow naturally */
+            /* For example, if you want info-section to appear after step 5: */
+            .info-section {
+                order: 6; /* Place it after the 5 steps */
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px; /* Less padding on very small screens */
+            }
+            .process-grid {
+                grid-template-columns: 1fr; /* Single column on very small screens */
+            }
+            .step-item, .info-section {
+                grid-column: 1; /* All items occupy the single column */
+                grid-row: auto;
+                order: initial; /* Reset order to natural document flow */
+            }
+            .container {
+                padding: 10px;
+            }
+            .bottom-heading {
+                font-size: 1.5em; /* Adjust font size for smaller screens */
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="process-grid">
+            <div class="step-item">
+                <h3>Step 1</h3>
+                <p>When you arrive at your appointment, complete a health check questionnaire and drink 500ml of water.</p>
+                <!-- Placeholder image for Step 1 -->
+                <img src="../image/first.jpg" alt="Person at reception desk completing a health check questionnaire.">
+            </div>
+
+            <div class="step-item">
+                <h3>Step 2</h3>
+                <p>Have a private health screening with a friendly member of the team.</p>
+                <!-- Placeholder image for Step 2 -->
+                <img src="../image/second.jpg" alt="Person undergoing a private health screening with a healthcare professional.">
+            </div>
+
+            <div class="step-item">
+                <h3>Step 3</h3>
+                <p>Take a seat and give blood for 5-10 minutes.</p>
+                <!-- Placeholder image for Step 3 -->
+                <img src="../image/third.png" alt="Person sitting in a chair giving blood.">
+            </div>
+
+            <div class="step-item">
+                <h3>Step 4</h3>
+                <p>Enjoy a free drink and snack while you rest for 15 minutes.</p>
+                <!-- Placeholder image for Step 4 -->
+                <img src="../image/step4.jpeg" alt="Person resting and enjoying a drink and snack after donating blood.">
+            </div>
+
+            <div class="step-item">
+                <h3>Step 5</h3>
+                <p>You're all done. Your donation will help save up to 3 lives.</p>
+                <!-- Placeholder image for Step 5 -->
+                <img src="../image/fifth.jpg" alt="A sticker that reads 'I sat back, gave blood and saved lives'.">
+            </div>
+
+            <!-- <div class="info-section">
+                <h2>Find out more about what happens on the day</h2>
+                <a href="#" class="info-link">
+                    <i class="fas fa-arrow-right"></i> 
+                </a>
+            </div> -->
+        </div>
+
+        <!-- Section below the main grid, as seen in the video
+        <h2 class="bottom-heading">Useful information if you have never given blood before</h2> -->
+    </div>
+</body>
+</html>

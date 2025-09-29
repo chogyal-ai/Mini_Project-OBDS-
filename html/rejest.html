@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register as Donor</title>
+    <style>
+        /* CSS Variables for consistent theming */
+        :root {
+            --primary-red: #D40026;
+            --dark-red: #A0001D;
+            --green-btn: #4CAF50; /* A standard green, similar to video */
+            --green-btn-hover: #45a049;
+            --cancel-btn-bg: #f44336; /* Red for cancel, similar to video */
+            --cancel-btn-hover: #da190b;
+            --white: #fff;
+            --light-grey-bg: #f9f9f9;
+            --border-color: #ccc;
+            --text-color: #333;
+            --label-color: #555;
+            --placeholder-color: #888;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--light-grey-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Logo and Back Button */
+        .header-top {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align logo and button to the left */
+            margin-bottom: 20px;
+        }
+
+        .header-top .logo {
+            width: 100px; /* Adjust size as needed */
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .back-button {
+            background-color: var(--primary-red);
+            color: var(--white);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: background-color 0.2s ease;
+            display: inline-block; /* Allows padding and margin */
+        }
+
+        .back-button:hover {
+            background-color: var(--dark-red);
+        }
+
+        /* Page Title */
+        h2 {
+            font-size: 1.8em;
+            color: var(--text-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        /* Mandatory Fields Note */
+        .mandatory-note {
+            font-size: 0.9em;
+            color: var(--primary-red);
+            margin-bottom: 25px;
+        }
+
+        /* Form Layout */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns */
+            gap: 20px 40px; /* Row gap, Column gap */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--label-color);
+        }
+
+        .form-group .required::after {
+            content: " *";
+            color: var(--primary-red);
+        }
+
+        .form-group input[type="text"],
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box; /* Include padding in width */
+            -webkit-appearance: none; /* Remove default styling for select on WebKit */
+            -moz-appearance: none; /* Remove default styling for select on Firefox */
+            appearance: none; /* Remove default styling for select */
+            background-color: var(--white);
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2C114.7L158.4%2C243.3c-2.4%2C2.4-5.8%2C4.1-9.3%2C4.1c-3.5%2C0-6.9-1.6-9.3-4.1L5.4%2C114.7c-4.1-4.1-4.1-10.7%2C0-14.8l14.8-14.8c4.1-4.1%2C10.7-4.1%2C14.8%2C0L144%2C193.3L257.4%2C85.1c4.1-4.1%2C10.7-4.1%2C14.8%2C0l14.8%2C14.8C291.1%2C104%2C291.1%2C110.6%2C287%2C114.7z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow for select */
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+            background-size: 12px auto;
+        }
+
+        .form-group input::placeholder,
+        .form-group select option[value=""] {
+            color: var(--placeholder-color);
+        }
+
+        /* Radio Buttons for Sex */
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .radio-group label {
+            font-weight: normal; /* Override bold for radio labels */
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .radio-group input[type="radio"] {
+            margin-right: 5px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            outline: none;
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+            position: relative;
+            top: 1px; /* Adjust vertical alignment */
+        }
+
+        .radio-group input[type="radio"]:checked {
+            border-color: var(--primary-red);
+        }
+
+        .radio-group input[type="radio"]:checked::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-red);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Buttons at the bottom */
+        .button-group {
+            grid-column: 1 / -1; /* Span across all columns */
+            display: flex;
+            justify-content: flex-end; /* Align to the right */
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .button-group button {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .cancel-button {
+            background-color: var(--cancel-btn-bg);
+            color: var(--white);
+        }
+
+        .cancel-button:hover {
+            background-color: var(--cancel-btn-hover);
+        }
+
+        .submit-button {
+            background-color: var(--green-btn);
+            color: var(--white);
+        }
+
+        .submit-button:hover {
+            background-color: var(--green-btn-hover);
+        }
+
+        /* Footer Text */
+        .footer-text {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            .form-grid {
+                grid-template-columns: 1fr; /* Single column layout on smaller screens */
+                gap: 15px;
+            }
+            .button-group {
+                justify-content: center; /* Center buttons on smaller screens */
+                flex-wrap: wrap; /* Allow buttons to wrap if needed */
+            }
+            .button-group button {
+                width: 100%; /* Full width buttons */
+                max-width: 200px; /* Limit max width for better appearance */
+            }
+            .header-top {
+                align-items: center; /* Center logo and button */
+            }
+            .header-top .logo {
+                margin-bottom: 10px;
+            }
+            h2 {
+                font-size: 1.5em;
+                text-align: center;
+            }
+            .mandatory-note {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+                margin: 10px;
+            }
+            .header-top .logo {
+                width: 80px;
+            }
+            .back-button {
+                padding: 8px 12px;
+                font-size: 0.8em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+            .mandatory-note {
+                font-size: 0.8em;
+            }
+            .form-group label {
+                font-size: 0.9em;
+            }
+            .form-group input[type="text"],
+            .form-group select {
+                padding: 8px;
+                font-size: 0.9em;
+            }
+            .radio-group {
+                flex-direction: column; /* Stack radio options vertically */
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .button-group button {
+                padding: 8px 20px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-top">
+            <!-- Placeholder for the logo. Replace 'https://via.placeholder.com/100x100/d40026/ffffff?text=LOGO' with your actual logo URL -->
+            <img src="../image/logo2.jpg" alt="Website Logo" class="logo">
+            <!-- <a href="sonam.html" class="back-button">Back To Website</a> -->
+        </div>
+
+        <h2>Register as Donor</h2>
+        <p class="mandatory-note">[Fields marked as * are mandatory]</p>
+
+        <form>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="bloodBank">Blood Bank</label>
+                    <select id="bloodBank" name="bloodBank">
+                        <option value="" disabled selected hidden>---SELECT ONE---</option>
+                        <option value="gidakhom">Gidakom Hospital</option>
+                        <option value="paro">Paro Hospital</option>
+                        <option value="punakha">Punakha Hospital</option>
+                        <option value="dwnrh_thimphu">JDWNRH Thimphu</option>
+                        <option value="phuentsholing">Phuentsholing Hospital</option>
+                        <option value="trongsa">Trongsa Hospital</option>
+                        <option value="mongar">ERRH Mongar</option>
+                        <option value="deothang">Deothang Hospital</option>
+                        <option value="pemagatshel">Pemagatshel Hospital</option>
+                        <option value="bumthang">Bumthang Hospital</option>
+                        <option value="gelegphu">CRRH Gelegphu</option>
+                        <option value="tsimalakha">Tsimalakha Hospital</option>
+                        <option value="others">Others</option>
+                        <option value="lhuntse">Lhuntse Hospital</option>
+                        <option value="brcs">Bhutan Red Cross Society (BRCS)</option>
+                        <option value="tsirang">Tsirang Hospital</option>
+                        <option value="trashigang">Trashigang Hospital</option>
+                        <option value="samtse">Samtse Hospital</option>
+                        <option value="mircobiology">Mircobiology (CRRH)</option>
+                        <option value="haa">Haa Hospital</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="required">Sex</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="sex" value="male"> Male</label>
+                        <label><input type="radio" name="sex" value="female"> Female</label>
+                        <label><input type="radio" name="sex" value="others" checked> Others</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="bloodGroup">Blood Group</label>
+                    <select id="bloodGroup" name="bloodGroup">
+                        <option value="" disabled selected hidden>---SELECT ONE---</option>
+                        <option value="a_positive">A+</option>
+                        <option value="a_negative">A-</option>
+                        <option value="b_positive">B+</option>
+                        <option value="b_negative">B-</option>
+                        <option value="ab_positive">AB+</option>
+                        <option value="ab_negative">AB-</option>
+                        <option value="o_positive">O+</option>
+                        <option value="o_negative">O-</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobileNo" class="required">Mobile No.</label>
+                    <input type="text" id="mobileNo" name="mobileNo">
+                </div>
+
+                <div class="form-group">
+                    <label for="firstName" class="required">First Name</label>
+                    <input type="text" id="firstName" name="firstName">
+                </div>
+
+                <div class="form-group">
+                    <label for="emailId" class="required">Email Id.</label>
+                    <input type="text" id="emailId" name="emailId">
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName">
+                </div>
+
+                <div class="form-group">
+                    <label for="idNo" class="required">CID</label>
+                    <input type="text" id="idNo" name="idNo">
+                </div>
+
+                <div class="form-group">
+                    <label for="dob" class="required">DOB</label>
+                    <input type="text" id="dob" name="dob" placeholder="YYYY-MM-DD">
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="cancel-button">CANCEL</button>
+                <button type="submit" class="submit-button">SUBMIT</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

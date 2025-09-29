@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Blood Transfusion Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        .header img {
+            max-width: 150px; /* Adjust logo size */
+        }
+        .title {
+            text-align: center;
+        }
+        .navbar {
+            background-color: #c0392b;
+            display: flex; /* Use flexbox for horizontal layout */
+            justify-content: space-around; /* Space out buttons */
+            padding: 10px 0;
+        }
+        .navbar .nav-button {
+            color: white;
+            background-color: transparent;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            position: relative;
+        }
+        .navbar .nav-button:hover {
+            background-color: #2980b9;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #c0392b;
+            min-width: 200px;
+            z-index: 1;
+        }
+        .dropdown a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown a:hover {
+            background-color: #2980b9;
+        }
+        .navbar .nav-button:hover .dropdown {
+            display: block;
+        }
+        .slider {
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .slides img {
+            width: 100%;
+            min-width: 100%;
+        }
+        .dashboard {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .dashboard-item {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            width: 23%; /* Adjust size as needed */
+            margin: 10px; /* Add margin for spacing */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="../image/logo2.jpg" alt="Left Logo">
+        <div class="title">
+            <h1>Online Blood Donation System </h1>
+            <h2>Department of Medical Services</h2>
+            <h3>Ministry of Health</h3>
+        </div>
+        <img src="../image/logo2.jpg" alt="Right Logo">
+    </div>
+
+    <div class="navbar">
+        <div class="nav-button">Home</div>
+        <div class="nav-button">About Us
+            <div class="dropdown">
+                <a href="#">Introduction</a>
+                <a href="#">Mission</a>
+                <!-- <a href="#">Blood Safety Program</a>
+                <a href="#">National Blood Transfusion Service</a>
+                <a href="#">Organogram</a> -->
+                <a href="steps.html">Steps of bolld donation</a>
+                <a href="list.html">List of Blood Banks</a>
+            </div>
+        </div>
+        <div class="nav-button">Donate Blood
+            <div class="dropdown">
+                <a href="#">Donate Info</a>
+                <a href="#">Eligibility</a>
+            </div>
+        </div>
+        <div class="nav-button">Contact
+            <div class="dropdown">
+                <a href="#">Contact Info</a>
+                <a href="#">Support</a>
+            </div>
+        </div>
+        <div class="nav-button">Publications
+            <div class="dropdown">
+                <a href="#">Reports</a>
+                <a href="#">Research</a>
+            </div>
+        </div>
+        <div class="nav-button">Sign In
+            <div class="dropdown">
+                <a href="SIGN1.HTML">User Login</a>
+                <a href="#">Admin Login</a>
+                <a href="#">log out</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slider">
+        <div class="slides">
+            <img src="../image/home1.jpg" alt="Image 1">
+            <img src="../image/home2.jpg" alt="Image 2">
+            <img src="../image/home3.jpg" alt="Image 3">
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <div class="dashboard-item">
+            <h4>Become a Donor</h4>
+            <!-- <button class="button">Register Now</button> -->
+             <a href="rejest.html">Register Now</a>
+        </div>
+        <div class="dashboard-item">
+            <h4>Donate Blood</h4>
+            <button class="button">Book Appointment</button>
+        </div>
+        <div class="dashboard-item">
+            <h4>Organize Camp</h4>
+            <button class="button">Submit Request</button>
+        </div>
+        <div class="dashboard-item">
+            <h4>Contact Us</h4>
+            <button class="button">Get in Touch</button>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = slides.children.length;
+
+        function showNextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            slides.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
+        }
+
+        setInterval(showNextSlide, 3000); // Change slides every 3 seconds
+    </script>
+
+</body>
+</html>

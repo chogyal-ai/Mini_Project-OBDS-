@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Blood Banks</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .table-container {
+            max-width: 800px; /* Limit table width for better readability */
+            margin: 30px auto; /* Center the container with some vertical margin */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow-x: auto; /* Enable horizontal scrolling on small screens */
+        }
+
+        h2 {
+            text-align: center;
+            color: #cc0000; /* Matching the red from the previous design */
+            padding: 20px 0 10px;
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Collapse borders for a cleaner look */
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee; /* Light border for separation */
+        }
+
+        th {
+            background-color: #f0f0f0; /* Light gray background for headers */
+            color: #555;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        /* Alternating row colors for better readability */
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Hover effect for rows */
+        tbody tr:hover {
+            background-color: #f0f8ff; /* Light blue on hover */
+            cursor: pointer;
+        }
+
+        /* Styling for links within the table */
+        td a {
+            color: #007bff; /* Blue color for links */
+            text-decoration: none; /* No underline by default */
+            transition: color 0.2s ease;
+        }
+
+        td a:hover {
+            color: #0056b3; /* Darker blue on hover */
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Remove bottom border for the last row */
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 24px;
+                padding: 15px 0 8px;
+            }
+            th, td {
+                padding: 10px;
+                font-size: 13px;
+            }
+            /* Make table columns stack or scroll if content is too wide */
+            .table-container {
+                border-radius: 0; /* Remove border-radius on very small screens */
+                margin: 0;
+                width: 100%;
+                box-shadow: none;
+            }
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="table-container">
+        <h2>List of Blood Banks</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Blood Bank</th>
+                    <th>Dzongkhag</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="#">Wangdue Phodrang Hospital</a></td>
+                    <td>Wangdue Phodrang</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Haa Hospital</a></td>
+                    <td>Haa</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Sarpang Regional Referral Hospital</a></td>
+                    <td>Sarpang</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Dagana Hospital</a></td>
+                    <td>Dagana</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Tsirang Hospital</a></td>
+                    <td>Tsirang</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Samdrup Jongkhar Hospital</a></td>
+                    <td>Samdrup Jongkhar</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Mongar Regional Referral Hospital</a></td>
+                    <td>Mongar</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Chukha Hospital</a></td>
+                    <td>Chukha</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Thimphu Hospital</a></td>
+                    <td>Thimphu</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Samtse Hospital</a></td>
+                    <td>Samtse</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Jigme Dorji Wangchuck National Referral Hospital</a></td>
+                    <td>Thimphu</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Lhuntse Hospital</a></td>
+                    <td>Lhuntse</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Paro Hospital</a></td>
+                    <td>Paro</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Pemagatshel Hospital</a></td>
+                    <td>Pemagatshel</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Phuentsholing Hospital</a></td>
+                    <td>Chukha</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Punakha Hospital</a></td>
+                    <td>Punakha</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Trashigang Hospital</a></td>
+                    <td>Trashigang</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Trongsa Hospital</a></td>
+                    <td>Trongsa</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Bumthang Hospital</a></td>
+                    <td>Bumthang</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Zhemgang Hospital</a></td>
+                    <td>Zhemgang</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Trashiyangtse Hospital</a></td>
+                    <td>Trashiyangtse</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation App UI</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../style/interface.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <!-- Screen 1: Home Screen (Initial) -->
+        <div id="homeScreen" class="screen">
+            <div class="header">
+                <div class="user-profile">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Hello! Chogyal.</span>
+                </div>
+                <!-- Notification icon not present in video for home screen -->
+            </div>
+
+            <div class="content">
+                <div class="location-section">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Samdrupjongkhar</span>
+                </div>
+
+                <button class="app-button primary" onclick="showScreen('donorDashboardScreen')">Want to donate? click here!</button>
+                <button class="app-button secondary" onclick="showScreen('requesterDashboardScreen')">Want to request? click here!</button>
+
+                <div class="info-carousel">
+                    <div class="carousel-item active" id="carouselItem1">
+                        <div class="image-content">
+                            <!-- Using placeholder images for demonstration -->
+                            <img src="../image/Blood-Donation-1.jpg" alt="Blood drop icon">
+                        </div>
+                        <div class="text-content">
+                            <h3>EVERY DROP BLOOD COUNTS</h3>
+                            <span class="call-to-action">GIVE BLOOD TODAY</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item" id="carouselItem2">
+                        <div class="image-content">
+                            <img src="../image/download (1).jpeg" alt="People donating blood">
+                        </div>
+                        <div class="text-content">
+                            <p class="quote">"The measure of life is not its DURATION but its DONATION"</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" id="carouselItem3">
+                        <div class="image-content">
+                            <img src="../image/download.jpeg" alt="Doctors and nurses">
+                        </div>
+                        <div class="text-content">
+                            <h3>SHARE A LITTLE</h3>
+                            <h3>CARE A LITTLE</h3>
+                            <span class="call-to-action">DONATE BLOOD</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item" id="carouselItem4">
+                        <div class="image-content">
+                            <img src="../image/download.png" alt="Person donating blood">
+                        </div>
+                        <div class="text-content">
+                            <p class="quote"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-nav">
+                <div class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </div>
+                <!-- Other nav items can be added here -->
+            </div>
+        </div>
+
+        <!-- Screen 2: Donor Dashboard -->
+        <div id="donorDashboardScreen" class="screen hidden">
+            <div class="header primary">
+                <span class="header-title">WELCOME DONORS!</span>
+                <i class="fas fa-bell notification-icon"></i>
+                <i class="fas fa-user-circle user-profile-icon"></i>
+                <span class="header-back-button" onclick="goBack()"></i> Back</span>
+            </div>
+            <div class="content">
+                <div class="dashboard-card green-bg">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>My Dashboard</span>
+                </div>
+                <div class="dashboard-grid">
+                    <div class="dashboard-card" onclick="showScreen('addDonationFormScreen')">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <span>Add donation</span>
+                    </div>
+                    <div class="dashboard-card" onclick="checkDonorAccess('viewRequestsScreen')">
+                        <i class="fas fa-file-alt"></i>
+                        <span>View Request</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 3: Add Donation Form (First part) -->
+        <div id="addDonationFormScreen" class="screen hidden">
+            <div class="form-header">
+                <h2>Let's Go!</h2>
+                <p>Please fill the information</p>
+                <span class="header-back-button" onclick="goBack()"></i> Back</span>
+            </div>
+            <div class="content">
+                <div class="form-group">
+                    <input type="text" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <input type="number" placeholder="CID number">
+                </div>
+                <div class="form-group">
+                    <select>
+                        <option value="">Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select>
+                        <option value="">Blood Group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="date" placeholder="Date">
+                </div>
+                <!-- Updated: "Next" button now goes to additionalInfoFormScreen -->
+                <button class="form-submit-button" onclick="setFormOrigin('donor'); showScreen('additionalInfoFormScreen');">Next</button>
+            </div>
+        </div>
+
+        <!-- Screen 4: View Requests (for Donors) -->
+        <div id="viewRequestsScreen" class="screen hidden">
+            <div class="form-header">
+                <h2>View Request</h2>
+                <span class="header-back-button" onclick="goBack()"></i> Back</span>
+            </div>
+            <div class="content no-padding">
+                <div class="list-container">
+                    <div class="list-card">
+                        <div class="blood-type">
+                            <i class="fas fa-tint"></i>
+                            AB<sup>+</sup>
+                            <span>0.5 Unit</span>
+                        </div>
+                        <div class="details">
+                            <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                            <p class="name-age">Male, 19yr old</p>
+                            <p><i class="fas fa-user"></i>Chogyal Wangdi</p>
+                            <p><i class="fas fa-map-marker-alt"></i>Rodi, Trashigang</p>
+                            <p><i class="fas fa-hospital"></i>Trashigang Hospital</p>
+                            <p><i class="fas fa-id-card"></i>179xxxxxx</p>
+                            <p><span class="date-label">Time Limit:</span> <span class="date-tag">15/11/2025</span></p>
+                            <button class="action-button">✓ Donate</button>
+                        </div>
+                    </div>
+                    <div class="list-card">
+                        <div class="blood-type">
+                            <i class="fas fa-tint"></i>
+                            A<sup>+</sup>
+                            <span>0.5 Unit</span>
+                        </div>
+                        <div class="details">
+                            <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                            <p class="name-age">Male, 21yr old</p>
+                            <p><i class="fas fa-user"></i>Sonam Dawa</p>
+                            <p><i class="fas fa-map-marker-alt"></i>Dametse, Mongar</p>
+                            <p><i class="fas fa-hospital"></i>Mongar Hospital</p>
+                            <p><span class="date-label">Date:</span> <span class="date-tag">31/5/2025</span></p>
+                            <button class="action-button">✓ Donate</button>
+                        </div>
+                    </div>
+                    <div class="list-card">
+                        <div class="blood-type">
+                            <i class="fas fa-tint"></i>
+                            O<sup>+</sup>
+                            <span>0.5 Unit</span>
+                        </div>
+                        <div class="details">
+                            <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                            <p class="name-age">Male, 20yr old</p>
+                            <p><i class="fas fa-user"></i>Dorji Samdrup</p>
+                            <p><i class="fas fa-map-marker-alt"></i>Shongphu, Trashigang</p>
+                            <p><i class="fas fa-hospital"></i>Trashigang Hospital</p>
+                            <p><span class="date-label">Date:</span> <span class="date-tag">15/3/2025</span></p>
+                            <button class="action-button">✓ Donate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 5: Requester Dashboard -->
+        <div id="requesterDashboardScreen" class="screen hidden">
+            <div class="header primary">
+                <span class="header-title">Hy, feel free!</span>
+                <i class="fas fa-bell notification-icon"></i>
+                <i class="fas fa-user-circle user-profile-icon"></i>
+                <span class="header-back-button" onclick="goBack()"></i> Back</span>
+            </div>
+            <div class="content">
+                <div class="dashboard-card green-bg">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>My Dashboard</span>
+                </div>
+                <div class="dashboard-grid">
+                    <div class="dashboard-card" onclick="showScreen('addRequestFormScreen')">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Add Request</span>
+                    </div>
+                    <div class="dashboard-card" onclick="checkRequesterAccess('searchDonorScreen')">
+                        <i class="fas fa-search"></i>
+                        <span>Search donor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 6: Add Request Form (First part) -->
+        <div id="addRequestFormScreen" class="screen hidden">
+            <div class="form-header">
+                <h2>Let's Go!</h2>
+                <p>Please fill the information</p>
+                <span class="header-back-button" onclick="goBack()"></i> Back</span>
+            </div>
+            <div class="content">
+                <div class="form-group">
+                    <input type="text" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <input type="number" placeholder="CID number">
+                </div>
+                <div class="form-group">
+                    <select>
+                        <option value="">Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select>
+                        <option value="">Blood Group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="date" placeholder="Date">
+                </div>
+                <!-- Updated: "Next" button now goes to additionalInfoFormScreen -->
+                <button class="form-submit-button" onclick="setFormOrigin('requester'); showScreen('additionalInfoFormScreen');">Next</button>
+            </div>
+        </div>
+
+        <!-- NEW Screen: Additional Information Form (Second part of both donor/requester forms) -->
+        <div id="additionalInfoFormScreen" class="screen hidden">
+            <div class="form-header">
+                <h2>Let's Go!</h2>
+                <p>Please fill the information</p>
+                <span class="header-back-button" onclick="goBack()"></i> Back</span>
+            </div>
+            <div class="content">
+                <div class="form-group">
+                    <input type="text" placeholder="Current address">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Nearby Hospital name">
+                </div>
+                <div class="form-group">
+                    <input type="number" placeholder="Phone number">
+                </div>
+                <!-- "Done" button navigates back to the appropriate dashboard -->
+                <button class="form-submit-button align-right" onclick="finishAdditionalInfoForm()">Done</button>
+            </div>
+        </div>
+
+        <!-- Screen 7: Search Donor Screen -->
+        <div id="searchDonorScreen" class="screen hidden">
+            <div class="form-header">
+                <h2>Search donor</h2>
+                <span class="header-back-button" onclick="goBack()"></i> Back</span>
+            </div>
+            <div class="content search-form-container">
+                <div class="form-group">
+                    <select>
+                        <option value="">Choose your blood group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Enter your location">
+                </div>
+                <button class="search-button" onclick="showScreen('donorListScreen')">
+                    <i class="fas fa-search"></i>
+                    Search
+                </button>
+            </div>
+        </div>
+
+        <!-- Screen 8: Donor List Screen (for Requesters) -->
+        <div id="donorListScreen" class="screen hidden">
+            <div class="form-header">
+                <h2>Donors!</h2>
+                <span class="header-back-button" onclick="goBack()"></i> Back</span>
+            </div>
+            <div class="content no-padding">
+                <div class="list-container">
+                    <div class="list-card">
+                        <div class="blood-type">
+                            <i class="fas fa-tint"></i>
+                            B<sup>+</sup>
+                            <span>0.5 Unit</span>
+                        </div>
+                        <div class="details">
+                            <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                            <p class="name-age">Female, 20yr old</p>
+                            <p><i class="fas fa-user"></i>Norbu Wangmo</p>
+                            <p><i class="fas fa-map-marker-alt"></i>Bumdeling, Trashiyangtse</p>
+                            <p><i class="fas fa-hospital"></i>AGS Hospital, Yangtse</p>
+                            <p><span class="date-label">Date:</span> <span class="date-tag">15/3/2025</span></p>
+                            <button class="action-button request">Request</button>
+                        </div>
+                    </div>
+                    <div class="list-card">
+                        <div class="blood-type">
+                            <i class="fas fa-tint"></i>
+                            A<sup>+</sup>
+                            <span>0.5 Unit</span>
+                        </div>
+                        <div class="details">
+                            <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                            <p class="name-age">Male, 21yr old</p>
+                            <p><i class="fas fa-user"></i>Sonam Jamtsho</p>
+                            <p><i class="fas fa-map-marker-alt"></i>Dametse, Mongar</p>
+                            <p><i class="fas fa-hospital"></i>Mongar Hospital</p>
+                            <p><span class="date-label">Date:</span> <span class="date-tag">18/5/2025</span></p>
+                            <button class="action-button request">Request</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+ 
+    <script>
+        const screens = document.querySelectorAll('.screen');
+        let screenHistory = ['homeScreen']; // To manage back navigation
+        let currentFormOrigin = null; // To track if the form is for 'donor' or 'requester'
+
+        // Flags to track if user has completed info for donation/request
+        let isDonorInfoAdded = false;
+        let isRequesterInfoAdded = false;
+
+        // Function to set the origin of the form (donor or requester)
+        function setFormOrigin(origin) {
+            currentFormOrigin = origin;
+        }
+
+        // Function to show a specific screen
+        function showScreen(screenId) {
+            screens.forEach(screen => {
+                screen.classList.add('hidden');
+            });
+            document.getElementById(screenId).classList.remove('hidden');
+            
+            // Update history, but only if it's a new screen in the sequence
+            if (screenHistory[screenHistory.length - 1] !== screenId) {
+                screenHistory.push(screenId);
+            }
+            // If navigating back to a screen already in history, trim history
+            else if (screenHistory.indexOf(screenId) !== screenHistory.length - 1) {
+                 screenHistory = screenHistory.slice(0, screenHistory.indexOf(screenId) + 1);
+            }
+        }
+
+        // Function to go back to the previous screen
+        function goBack() {
+            if (screenHistory.length > 1) {
+                screenHistory.pop(); // Remove current screen
+                const previousScreenId = screenHistory[screenHistory.length - 1];
+                // Directly set the screen without adding to history again
+                screens.forEach(screen => {
+                    screen.classList.add('hidden');
+                });
+                document.getElementById(previousScreenId).classList.remove('hidden');
+            } else {
+                console.log("Already on the first screen.");
+            }
+        }
+
+        // Function to check donor access before navigating
+        function checkDonorAccess(targetScreenId) {
+            if (isDonorInfoAdded) {
+                showScreen(targetScreenId);
+            } else {
+                alert("Please add your donation details first (complete both forms) to view requests.");
+            }
+        }
+
+        // Function to check requester access before navigating
+        function checkRequesterAccess(targetScreenId) {
+            if (isRequesterInfoAdded) {
+                showScreen(targetScreenId);
+            } else {
+                alert("Please add your request details first (complete both forms) to search for donors.");
+            }
+        }
+
+        // Function for the "Done" button on additionalInfoFormScreen
+        function finishAdditionalInfoForm() {
+            // Here you would typically collect form data and send it to a backend.
+            // For this simulation, we just update the flags.
+
+            if (currentFormOrigin === 'donor') {
+                isDonorInfoAdded = true;
+                // Remove the current screen (additionalInfoFormScreen) and the previous form screen (addDonationFormScreen) from history
+                screenHistory.pop(); // additionalInfoFormScreen
+                screenHistory.pop(); // addDonationFormScreen
+                showScreen('donorDashboardScreen');
+            } else if (currentFormOrigin === 'requester') {
+                isRequesterInfoAdded = true;
+                // Remove the current screen (additionalInfoFormScreen) and the previous form screen (addRequestFormScreen) from history
+                screenHistory.pop(); // additionalInfoFormScreen
+                screenHistory.pop(); // addRequestFormScreen
+                showScreen('requesterDashboardScreen');
+            } else {
+                // Fallback if origin isn't set, go to home or previous screen
+                goBack();
+            }
+            currentFormOrigin = null; // Reset origin after completion
+        }
+
+        // Carousel functionality for the home screen
+        let currentCarouselItem = 0;
+        const carouselItems = document.querySelectorAll('.carousel-item');
+
+        function showCarouselItem(index) {
+            carouselItems.forEach((item, i) => {
+                item.classList.remove('active');
+                if (i === index) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        function nextCarouselItem() {
+            currentCarouselItem = (currentCarouselItem + 1) % carouselItems.length;
+            showCarouselItem(currentCarouselItem);
+        }
+
+        // Start carousel on load
+        document.addEventListener('DOMContentLoaded', () => {
+            showCarouselItem(currentCarouselItem);
+            setInterval(nextCarouselItem, 3000); // Change item every 3 seconds
+        });
+
+        // Initialize by showing the home screen
+        showScreen('homeScreen');
+    </script> 
+</body>
+</html>

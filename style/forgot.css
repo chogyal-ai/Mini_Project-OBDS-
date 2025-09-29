@@ -1,0 +1,53 @@
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    /* Add your background image */
+    background-image: url('../image/home4.jpg'); /* replace with your image file */
+    background-size: cover;       /* make image cover the whole screen */
+    background-position: center;  /* center the image */
+    background-repeat: no-repeat; /* don’t repeat the image */
+}
+
+/* Add a semi-transparent overlay behind the form (optional for readability) */
+.container {
+    background: rgba(255, 255, 255, 0.9); /* white with transparency */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    width: 300px;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:red;
+}
+
+.hidden { 
+    display: none; 
+}
+
+#message {
+    margin-top: 15px;
+    color:red;
+    font-weight: bold;
+    text-align: center;
+}
