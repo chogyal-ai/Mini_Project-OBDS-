@@ -29,111 +29,125 @@
         }
 
         body {
-            background-color: #f8f9fa;
+            /* background-color: #f8f9fa; */
             display: flex;
             height: 100vh;
             overflow: hidden;
         }
 
-        /* Login Page Styles */
+        /* === LOGIN PAGE === */
         .login-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 20px;
-        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+        margin-left: 600px;
+        width: 400px;
+    }
 
-        .login-box {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
+    .login-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(8px);
+        z-index: -1;
+    }
 
-        .login-logo {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 20px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #e63946, #457b9d);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
+    .login-box {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        margin: 0 auto;
+    }
+/* 
+    /* .login-logo { */
+        /* width: 30px;
+        height: 10px;
+        margin-bottom: 20px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #e63946, #457b9d);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
+    /* } */ 
 
-        .login-title {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--text-dark);
-        }
+    .login-title {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: var(--text-dark);
+    }
 
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
+    .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+    }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-            color: var(--text-dark);
-        }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+        color: var(--text-dark);
+    }
 
-        .form-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
+    .form-group input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+    }
 
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 2px rgba(69, 123, 157, 0.2);
-        }
+    .form-group input:focus {
+        outline: none;
+        border-color: var(--accent-color);
+        box-shadow: 0 0 0 2px rgba(69, 123, 157, 0.2);
+    }
 
-        .login-btn {
-            width: 100%;
-            padding: 12px;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+    .login-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
 
-        .login-btn:hover {
-            background-color: #d62839;
-        }
+    .login-btn:hover {
+        background-color: #d62839;
+    }
 
-        .forgot-password {
-            margin-top: 15px;
-            font-size: 14px;
-            color: var(--accent-color);
-            text-decoration: underline;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
+    .forgot-password {
+        margin-top: 15px;
+        font-size: 14px;
+        color: var(--accent-color);
+        text-decoration: underline;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
 
-        .forgot-password:hover {
-            color: #3a5a78;
-        }
+    .forgot-password:hover {
+        color: #3a5a78;
+    }
 
-        /* Dashboard Styles */
+        /* === DASHBOARD STYLES === */
         .dashboard-container {
             display: none;
             flex: 1;
@@ -167,8 +181,8 @@
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 20px;
-        }
+            font-size: 20px; 
+        } 
 
         .sidebar-title {
             font-size: 18px;
@@ -180,6 +194,12 @@
             padding: 20px 0;
             flex: 1;
             overflow-y: auto;
+        }
+
+
+        #small-logo {
+            height: 50px;
+            width: 60px;
         }
 
         .menu-item {
@@ -233,6 +253,7 @@
             flex: 1;
             overflow-y: auto;
             background-color: white;
+            align-items: center;
         }
 
         .header {
@@ -425,7 +446,7 @@
             color: var(--accent-color);
         }
 
-        /* Form Styles */
+        /* === FORM STYLES === */
         .form-container {
             background-color: white;
             border-radius: 12px;
@@ -541,7 +562,7 @@
             background-color: #5a5a5a;
         }
 
-        /* Table Styles */
+        /* === TABLE STYLES === */
         .table-container {
             background-color: white;
             border-radius: 12px;
@@ -612,7 +633,7 @@
             background-color: #3aa8d8;
         }
 
-        /* Profile Section */
+        /* === PROFILE STYLES === */
         .profile-container {
             background-color: white;
             border-radius: 12px;
@@ -678,7 +699,7 @@
             font-size: 16px;
         }
 
-        /* Report Styles */
+        /* === REPORT STYLES === */
         .report-container {
             background-color: white;
             border-radius: 12px;
@@ -711,7 +732,7 @@
             font-size: 18px;
         }
 
-        /* Modal Styles */
+        /* === MODAL STYLES === */
         .modal {
             display: none;
             position: fixed;
@@ -806,59 +827,7 @@
             background-color: #5a5a5a;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 70px;
-            }
-
-            .sidebar-title {
-                display: none;
-            }
-
-            .menu-item span {
-                display: none;
-            }
-
-            .sidebar-header {
-                padding: 15px;
-            }
-
-            .sidebar-logo {
-                width: 40px;
-                height: 40px;
-                font-size: 16px;
-            }
-
-            .stats-container {
-                flex-direction: column;
-            }
-
-            .form-row {
-                flex-direction: column;
-            }
-
-            .form-col {
-                min-width: 100%;
-            }
-
-            .header {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .welcome {
-                width: 100%;
-                justify-content: space-between;
-            }
-
-            .header-icons {
-                width: 100%;
-                justify-content: space-between;
-            }
-        }
-
-        /* Password Reset Modal */
+        /* === PASSWORD RESET STYLES === */
         .reset-form {
             display: flex;
             flex-direction: column;
@@ -949,7 +918,7 @@
             background-color: #4cc9f0;
         }
 
-        /* Loading Animation */
+        /* === LOADING & MESSAGES === */
         .loading {
             display: none;
             position: fixed;
@@ -977,7 +946,6 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Success Message */
         .success-message {
             display: none;
             position: fixed;
@@ -1003,7 +971,6 @@
             }
         }
 
-        /* Error Message */
         .error-message {
             display: none;
             position: fixed;
@@ -1018,36 +985,59 @@
             animation: fadeInUp 0.5s ease;
         }
 
-        /* Tab Navigation */
-        .tab-navigation {
-            display: flex;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 20px;
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 70px;
+            }
+
+            .sidebar-title {
+                display: none;
+            }
+
+            .menu-item span {
+                display: none;
+            }
+
+            .sidebar-header {
+                padding: 15px;
+            }
+
+            .sidebar-logo {
+                width: 0px;
+                height: 0px;
+    
+            }
+
+            .stats-container {
+                flex-direction: column;
+            }
+
+            .form-row {
+                flex-direction: column;
+            }
+
+            .form-col {
+                min-width: 100%;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .welcome {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .header-icons {
+                width: 100%;
+                justify-content: space-between;
+            }
         }
 
-        .tab-item {
-            padding: 12px 20px;
-            cursor: pointer;
-            border-bottom: 3px solid transparent;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .tab-item.active {
-            border-bottom-color: var(--primary-color);
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        /* File Input Styling */
+        /* === FILE INPUT STYLING === */
         .file-input-wrapper {
             position: relative;
             overflow: hidden;
@@ -1083,7 +1073,7 @@
             color: var(--text-light);
         }
 
-        /* Notification Badge */
+        /* === NOTIFICATION BADGE === */
         .notification-badge {
             position: relative;
         }
@@ -1103,6 +1093,21 @@
             font-size: 12px;
             font-weight: 600;
         }
+
+        /* === VIEW MODAL === */
+        #viewModal .modal-content {
+            max-width: 600px;
+        }
+
+        #viewModal .modal-body p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        #viewModal .modal-body strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -1110,7 +1115,7 @@
     <div class="login-container" id="loginPage">
         <div class="login-box">
             <div class="login-logo">
-                <i class="fas fa-tint"></i>
+                <img src="../images/logo.jpg" alt="Blood Donation System Logo">
             </div>
             <h2 class="login-title">Admin Login</h2>
             <form id="loginForm">
@@ -1134,7 +1139,7 @@
         <div class="sidebar">
             <div class="sidebar-header">
                 <div class="sidebar-logo">
-                    <i class="fas fa-tint"></i>
+                    <img src="../images/logo.jpg" alt="Blood Donation System Logo" id="small-logo">
                 </div>
                 <div class="sidebar-title">Blood Donation System</div>
             </div>
@@ -1353,9 +1358,9 @@
                                 <td>15 May 2023</td>
                                 <td><span style="color: #457b9d; font-weight: 600;">Pending</span></td>
                                 <td class="table-actions">
-                                    <button class="btn-action btn-view">View</button>
-                                    <button class="btn-action btn-edit">Edit</button>
-                                    <button class="btn-action btn-delete">Delete</button>
+                                    <button class="btn-action btn-view" onclick="viewRequester(this)" data-id="1">View</button>
+                                    <button class="btn-action btn-edit" onclick="editRequester(this)" data-id="1">Edit</button>
+                                    <button class="btn-action btn-delete" onclick="deleteRequester(this)" data-id="1">Delete</button>
                                 </td>
                             </tr>
                             <tr>
@@ -1366,9 +1371,9 @@
                                 <td>20 May 2023</td>
                                 <td><span style="color: #4cc9f0; font-weight: 600;">Fulfilled</span></td>
                                 <td class="table-actions">
-                                    <button class="btn-action btn-view">View</button>
-                                    <button class="btn-action btn-edit">Edit</button>
-                                    <button class="btn-action btn-delete">Delete</button>
+                                    <button class="btn-action btn-view" onclick="viewRequester(this)" data-id="2">View</button>
+                                    <button class="btn-action btn-edit" onclick="editRequester(this)" data-id="2">Edit</button>
+                                    <button class="btn-action btn-delete" onclick="deleteRequester(this)" data-id="2">Delete</button>
                                 </td>
                             </tr>
                             <tr>
@@ -1379,9 +1384,9 @@
                                 <td>25 May 2023</td>
                                 <td><span style="color: #457b9d; font-weight: 600;">Pending</span></td>
                                 <td class="table-actions">
-                                    <button class="btn-action btn-view">View</button>
-                                    <button class="btn-action btn-edit">Edit</button>
-                                    <button class="btn-action btn-delete">Delete</button>
+                                    <button class="btn-action btn-view" onclick="viewRequester(this)" data-id="3">View</button>
+                                    <button class="btn-action btn-edit" onclick="editRequester(this)" data-id="3">Edit</button>
+                                    <button class="btn-action btn-delete" onclick="deleteRequester(this)" data-id="3">Delete</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -1414,9 +1419,9 @@
                                 <td>15 May 2023</td>
                                 <td><span style="color: #4cc9f0; font-weight: 600;">Available</span></td>
                                 <td class="table-actions">
-                                    <button class="btn-action btn-view">View</button>
-                                    <button class="btn-action btn-edit">Edit</button>
-                                    <button class="btn-action btn-delete">Delete</button>
+                                    <button class="btn-action btn-view" onclick="viewDonor(this)" data-id="1">View</button>
+                                    <button class="btn-action btn-edit" onclick="editDonor(this)" data-id="1">Edit</button>
+                                    <button class="btn-action btn-delete" onclick="deleteDonor(this)" data-id="1">Delete</button>
                                 </td>
                             </tr>
                             <tr>
@@ -1427,9 +1432,9 @@
                                 <td>25 May 2023</td>
                                 <td><span style="color: #4cc9f0; font-weight: 600;">Available</span></td>
                                 <td class="table-actions">
-                                    <button class="btn-action btn-view">View</button>
-                                    <button class="btn-action btn-edit">Edit</button>
-                                    <button class="btn-action btn-delete">Delete</button>
+                                    <button class="btn-action btn-view" onclick="viewDonor(this)" data-id="2">View</button>
+                                    <button class="btn-action btn-edit" onclick="editDonor(this)" data-id="2">Edit</button>
+                                    <button class="btn-action btn-delete" onclick="deleteDonor(this)" data-id="2">Delete</button>
                                 </td>
                             </tr>
                             <tr>
@@ -1440,9 +1445,9 @@
                                 <td>25 May 2023</td>
                                 <td><span style="color: #4cc9f0; font-weight: 600;">Available</span></td>
                                 <td class="table-actions">
-                                    <button class="btn-action btn-view">View</button>
-                                    <button class="btn-action btn-edit">Edit</button>
-                                    <button class="btn-action btn-delete">Delete</button>
+                                    <button class="btn-action btn-view" onclick="viewDonor(this)" data-id="3">View</button>
+                                    <button class="btn-action btn-edit" onclick="editDonor(this)" data-id="3">Edit</button>
+                                    <button class="btn-action btn-delete" onclick="deleteDonor(this)" data-id="3">Delete</button>
                                 </td>
                             </tr>
                             <tr>
@@ -1453,9 +1458,9 @@
                                 <td>25 May 2023</td>
                                 <td><span style="color: #4cc9f0; font-weight: 600;">Available</span></td>
                                 <td class="table-actions">
-                                    <button class="btn-action btn-view">View</button>
-                                    <button class="btn-action btn-edit">Edit</button>
-                                    <button class="btn-action btn-delete">Delete</button>
+                                    <button class="btn-action btn-view" onclick="viewDonor(this)" data-id="4">View</button>
+                                    <button class="btn-action btn-edit" onclick="editDonor(this)" data-id="4">Edit</button>
+                                    <button class="btn-action btn-delete" onclick="deleteDonor(this)" data-id="4">Delete</button>
                                 </td>
                             </tr>
                             <tr>
@@ -1466,9 +1471,9 @@
                                 <td>10 May 2023</td>
                                 <td><span style="color: #457b9d; font-weight: 600;">Pending</span></td>
                                 <td class="table-actions">
-                                    <button class="btn-action btn-view">View</button>
-                                    <button class="btn-action btn-edit">Edit</button>
-                                    <button class="btn-action btn-delete">Delete</button>
+                                    <button class="btn-action btn-view" onclick="viewDonor(this)" data-id="5">View</button>
+                                    <button class="btn-action btn-edit" onclick="editDonor(this)" data-id="5">Edit</button>
+                                    <button class="btn-action btn-delete" onclick="deleteDonor(this)" data-id="5">Delete</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -1552,11 +1557,11 @@
                 <h1 class="page-title">Profile Settings</h1>
                 <div class="profile-container">
                     <div class="profile-header">
-                        <div class="profile-avatar">
+                        <div class="profile-avatar" id="avatarPreview">
                             <i class="fas fa-user"></i>
                             <div class="avatar-upload">
                                 <i class="fas fa-camera"></i>
-                                <input type="file" class="file-input" accept="image/*">
+                                <input type="file" class="file-input" accept="image/*" id="profilePicture">
                             </div>
                         </div>
                         <div class="profile-info">
@@ -1656,6 +1661,27 @@
             <div class="modal-footer">
                 <button type="button" class="modal-btn modal-btn-secondary" id="prevStep">Previous</button>
                 <button type="button" class="modal-btn modal-btn-primary" id="nextStep">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Requester Modal -->
+    <div class="modal" id="viewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Requester Details</h2>
+                <div class="close-modal" onclick="closeViewModal()">&times;</div>
+            </div>
+            <div class="modal-body">
+                <p><strong>Name:</strong> <span id="viewName">Loading...</span></p>
+                <p><strong>Blood Type:</strong> <span id="viewBloodType">Loading...</span></p>
+                <p><strong>Quantity:</strong> <span id="viewQuantity">Loading...</span></p>
+                <p><strong>Urgency:</strong> <span id="viewUrgency">Loading...</span></p>
+                <p><strong>Date Requested:</strong> <span id="viewDate">Loading...</span></p>
+                <p><strong>Status:</strong> <span id="viewStatus">Loading...</span></p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-secondary" onclick="closeViewModal()">Close</button>
             </div>
         </div>
     </div>
@@ -1784,10 +1810,10 @@
             }
             
             // File Input for Profile Picture
-            const fileInputs = document.querySelectorAll('.file-input');
-            fileInputs.forEach(input => {
-                input.addEventListener('change', handleFileUpload);
-            });
+            const profilePictureInput = document.getElementById('profilePicture');
+            if (profilePictureInput) {
+                profilePictureInput.addEventListener('change', handleProfilePictureUpload);
+            }
         }
         
         // Handle Login
@@ -2254,8 +2280,8 @@
             }, 1500);
         }
         
-        // Handle File Upload (Profile Picture)
-        function handleFileUpload(e) {
+        // Handle Profile Picture Upload
+        function handleProfilePictureUpload(e) {
             const file = e.target.files[0];
             
             if (file) {
@@ -2283,7 +2309,7 @@
                     // Update avatar preview
                     const reader = new FileReader();
                     reader.onload = function(e) {
-                        const avatar = document.querySelector('.profile-avatar');
+                        const avatar = document.getElementById('avatarPreview');
                         avatar.style.backgroundImage = `url(${e.target.result})`;
                         avatar.style.backgroundColor = 'transparent';
                         avatar.innerHTML = '';
@@ -2408,6 +2434,90 @@
             setTimeout(() => {
                 errorMessage.style.display = 'none';
             }, 3000);
+        }
+
+        // ========== VIEW / EDIT / DELETE FUNCTIONALITY ==========
+
+        // View Requester
+        function viewRequester(button) {
+            const id = button.getAttribute('data-id');
+            
+            // Simulate fetching data (in real app: fetch from API)
+            const requesterData = {
+                1: { name: "Dr. Tashi Wangchuk", blood_type: "B+", quantity: 2, urgency: "High", date: "15 May 2023", status: "Pending" },
+                2: { name: "Nurse Pema Lhamo", blood_type: "O-", quantity: 1, urgency: "Medium", date: "20 May 2023", status: "Fulfilled" },
+                3: { name: "Hospital Admin", blood_type: "A+", quantity: 3, urgency: "Low", date: "25 May 2023", status: "Pending" }
+            };
+            
+            const data = requesterData[id];
+            if (!data) return;
+            
+            document.getElementById('viewName').textContent = data.name;
+            document.getElementById('viewBloodType').textContent = data.blood_type;
+            document.getElementById('viewQuantity').textContent = data.quantity;
+            document.getElementById('viewUrgency').textContent = data.urgency;
+            document.getElementById('viewDate').textContent = data.date;
+            document.getElementById('viewStatus').textContent = data.status;
+            
+            document.getElementById('viewModal').style.display = 'flex';
+        }
+
+        function closeViewModal() {
+            document.getElementById('viewModal').style.display = 'none';
+        }
+
+        // Edit Requester
+        function editRequester(button) {
+            const id = button.getAttribute('data-id');
+            showSuccess(`Editing requester #${id}`);
+            alert(`Editing Requester ID: ${id}`);
+        }
+
+        // Delete Requester
+        function deleteRequester(button) {
+            const id = button.getAttribute('data-id');
+            
+            if (confirm(`Are you sure you want to delete Requester #${id}?`)) {
+                showSuccess(`Requester #${id} deleted successfully!`);
+                button.closest('tr').remove();
+            }
+        }
+
+        // View Donor
+        function viewDonor(button) {
+            const id = button.getAttribute('data-id');
+            
+            // Simulate fetching data
+            const donorData = {
+                1: { name: "Chogyal Wangdi", blood_type: "B+", age: 28, gender: "Male", last_donation: "15 May 2023", availability: "Available" },
+                2: { name: "Sonam Jamtsho", blood_type: "B+", age: 32, gender: "Female", last_donation: "25 May 2023", availability: "Available" },
+                3: { name: "Dorji Samdrup", blood_type: "B+", age: 45, gender: "Male", last_donation: "25 May 2023", availability: "Available" },
+                4: { name: "Norbu Wangmo", blood_type: "B+", age: 29, gender: "Female", last_donation: "25 May 2023", availability: "Available" },
+                5: { name: "Tenzin Dorji", blood_type: "A+", age: 38, gender: "Male", last_donation: "10 May 2023", availability: "Pending" }
+            };
+            
+            const data = donorData[id];
+            if (!data) return;
+            
+            // In real app: open modal with pre-filled form
+            alert(`Viewing Donor ID: ${id}\nName: ${data.name}\nBlood Type: ${data.blood_type}\nAge: ${data.age}\nGender: ${data.gender}\nLast Donation: ${data.last_donation}\nAvailability: ${data.availability}`);
+        }
+
+        // Edit Donor
+        function editDonor(button) {
+            const id = button.getAttribute('data-id');
+            showSuccess(`Editing donor #${id}`);
+            alert(`Editing Donor ID: ${id}`);
+        }
+
+        // Delete Donor
+        function deleteDonor(button) {
+            const id = button.getAttribute('data-id');
+            
+            if (confirm(`Are you sure you want to delete Donor #${id}?`)) {
+                showSuccess(`Donor #${id} deleted successfully!`);
+                button.closest('tr').remove();
+            }
         }
     </script>
 </body>
