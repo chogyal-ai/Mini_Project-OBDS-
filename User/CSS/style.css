@@ -1,0 +1,193 @@
+/* welcome page and login */
+.page {
+  color: white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.hidden {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+  font-weight: bold;
+  display: none;
+}
+
+.container {
+  background: rgba(16, 15, 15, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  width: 300px;
+  margin: 120px;
+
+}
+
+#welcome {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.logo {
+  width: 150px;
+  margin: 20px 0;
+
+}
+
+button {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: lighter;
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button:hover {
+  background: darkred;
+}
+
+input {
+  display:block;
+  width: 100%;
+  padding: 20px;
+  margin: 20px -10px;
+  border: 4px;
+  color: white;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.row {
+  color: rgb(160, 160, 233);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.login {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+}
+
+a {
+  color: rgb(230, 149, 149);
+}
+
+
+
+/* Create account */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 350px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+h3 {
+  text-align: left;
+  margin: 20px 0 10px;
+  font-size: 16px;
+  color: #444;
+}
+
+.form-group {
+  color: white;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #ff3366;
+  color: #fff;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #e62e5c;
+}
+
+.success h2 {
+  margin-bottom: 20px;
+}
+
+.icon {
+  font-size: 60px;
+  margin: 20px 0;
+  color: green;
+}
+
+
+/* reset password */
+
+body {
+  background-image:url(../Images/hos.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.info-text {
+  font-size: 13px;
+  color: white;
+  margin: 10px 0 20px;
+  text-align: left;
+}
+
+.btn-secondary {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #f2f2f2;
+}
+
+h2 {
+  color: white;
+}
