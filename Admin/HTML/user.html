@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BloodConnect - Blood Donation Platform</title>
+    <title>OBDS- Blood Donation Platform</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -59,12 +59,14 @@
             max-width: 400px;
         }
 
-        .logo {
+         .logo {
             width: 80px;
             height: 80px;
-            background: var(--primary-red);
+            background-image: url("../images/logo.jpg");
+            background-size: cover;
+            background-position: center;
             border-radius: 50%;
-            display: flex;
+            display:flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
@@ -638,9 +640,8 @@
         <div id="loginScreen" class="login-screen">
             <div class="login-card">
                 <div class="logo">
-                    <i class="fas fa-tint"></i>
                 </div>
-                <h1>BloodConnect</h1>
+                <h1>Online Blood Donation System</h1>
                 <p>Connecting donors with those in need</p>
                 
                 <form id="loginForm">
@@ -665,7 +666,6 @@
         <div id="registerScreen" class="login-screen" style="display: none;">
             <div class="login-card">
                 <div class="logo">
-                    <i class="fas fa-user-plus"></i>
                 </div>
                 <h1>Create Account</h1>
                 <p>Join our blood donation community</p>
@@ -753,9 +753,8 @@
                 <div class="header-content">
                     <div class="header-logo">
                         <div class="logo">
-                            <i class="fas fa-tint"></i>
                         </div>
-                        <div class="header-title">BloodConnect</div>
+                        <div class="header-title">Online Blood Donation System</div>
                     </div>
                     <div class="user-info">
                         <span class="user-name" id="userName">User Name</span>
@@ -846,7 +845,14 @@
                             
                             <div class="form-group">
                                 <label class="form-label">Phone Number</label>
-                                <input type="tel" class="form-input" id="profilePhone" placeholder="+1 (555) 123-4567">
+                                <input type="tel" 
+                                    class="form-input" 
+                                    id="profilePhone" 
+                                    placeholder="Enter phone number"  
+                                    required
+                                    pattern="(17|77)[0-9]{6}" 
+                                    title="Phone number must be 8 digits and start with 17 or 77">
+                                    
                             </div>
                             
                             <div class="form-row">
@@ -918,7 +924,13 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label">Phone</label>
-                            <input type="tel" class="form-input" id="donorPhone" placeholder="+1 (555) 123-4567" required>
+                            <input type="tel" 
+                                    class="form-input" 
+                                    id="profilePhone" 
+                                    placeholder="Enter phone number"  
+                                    required
+                                    pattern="(17|77)[0-9]{6}" 
+                                    title="Phone number must be 8 digits and start with 17 or 77">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Last Donation</label>
@@ -975,7 +987,13 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">Contact Number</label>
-                            <input type="tel" class="form-input" id="requestContact" placeholder="+1 (555) 123-4567" required>
+                            <input type="tel" 
+                                    class="form-input" 
+                                    id="profilePhone" 
+                                    placeholder="Enter phone number"  
+                                    required
+                                    pattern="(17|77)[0-9]{6}" 
+                                    title="Phone number must be 8 digits and start with 17 or 77">
                         </div>
                     </div>
                     <div class="form-group">
@@ -996,23 +1014,23 @@
         let users = [
             {
                 id: 1,
-                name: 'John Doe',
-                email: 'john@example.com',
+                name: 'Norbu Wangmo',
+                email: 'norbu@example.com',
                 password: 'password123',
                 type: 'donor',
-                phone: '+1 (555) 123-4567',
+                phone: '(+975) 17 45 25 28',
                 bloodType: 'A+',
-                location: 'New York'
+                location: 'Dewathang'
             },
             {
                 id: 2,
-                name: 'Jane Smith',
-                email: 'jane@example.com',
+                name: 'Dorji Samdrup',
+                email: 'dorji@example.com',
                 password: 'password123',
                 type: 'requester',
-                phone: '+1 (555) 987-6543',
+                phone: '(+975) 17 47 09 26',
                 bloodType: 'O-',
-                location: 'Los Angeles'
+                location: 'Thimphu'
             }
         ];
 
@@ -1020,20 +1038,20 @@
         let donors = [
             {
                 id: 1,
-                name: 'Sarah Johnson',
-                bloodType: 'A+',
-                location: 'Downtown Hospital',
-                phone: '+1 (555) 123-4567',
+                name: 'Dorji Samdrup',
+                bloodType: 'B+',
+                location: 'Trashigang Hospital',
+                phone: '(+975) 17 47 09 26',
                 lastDonation: '2024-01-15',
                 available: true,
                 donations: 12
             },
             {
                 id: 2,
-                name: 'Michael Chen',
+                name: 'Chogyal Wangdi',
                 bloodType: 'O-',
-                location: 'City Medical Center',
-                phone: '+1 (555) 987-6543',
+                location: 'Rangjung Hospital',
+                phone: '(+975) 17 92 31 44',
                 lastDonation: '2024-02-01',
                 available: true,
                 donations: 8
@@ -1043,14 +1061,24 @@
         let requests = [
             {
                 id: 1,
-                patientName: 'David Wilson',
+                patientName: 'Sonam Jamtsho',
                 bloodType: 'AB+',
-                location: 'Memorial Hospital',
+                location: 'Mongar Hospital',
                 urgency: 'High',
-                contact: '+1 (555) 234-5678',
+                contact: '(+975) 77 80 96 42',
                 dateNeeded: '2024-03-15',
                 status: 'Active'
-            }
+            },
+
+            {id: 2,
+                patientName: 'Norbu Wangmo',
+                bloodType: 'B+',
+                location: 'Trashiyangtse Hospital',
+                urgency: 'Medium',
+                contact: '(+975) 17 45 25 28',
+                dateNeeded: '2024-12-15',
+                status: 'Active'
+            },
         ];
 
         // State management
