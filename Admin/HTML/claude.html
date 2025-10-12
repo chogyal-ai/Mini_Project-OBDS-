@@ -29,6 +29,7 @@
         }
 
         body {
+            background-color: #f8f9fa;
             display: flex;
             height: 100vh;
             overflow: hidden;
@@ -36,120 +37,109 @@
 
         /* === LOGIN PAGE === */
         .login-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        position: relative;
-        margin-left: 600px;
-        width: 400px;
-    }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+        }
 
-    .login-container::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(8px);
-        z-index: -1;
-    }
+        .login-box {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
 
-    .login-box {
-        background: white;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        padding: 40px;
-        width: 100%;
-        max-width: 400px;
-        text-align: center;
-        margin: 0 auto;
-    }
+        .login-logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
 
-    .login-logo {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto 20px;
-        border-radius: 50%;
-        background: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-    }
-    
-    .login-logo img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
+        .login-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
 
-    .login-title {
-        font-size: 24px;
-        font-weight: 600;
-        margin-bottom: 20px;
-        color: var(--text-dark);
-    }
+        .login-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
 
-    .form-group {
-        margin-bottom: 20px;
-        text-align: left;
-    }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
 
-    .form-group label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: 500;
-        color: var(--text-dark);
-    }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
 
-    .form-group input {
-        width: 100%;
-        padding: 12px 15px;
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        font-size: 16px;
-        transition: border-color 0.3s ease;
-    }
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
 
-    .form-group input:focus {
-        outline: none;
-        border-color: var(--accent-color);
-        box-shadow: 0 0 0 2px rgba(69, 123, 157, 0.2);
-    }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(69, 123, 157, 0.2);
+        }
 
-    .login-btn {
-        width: 100%;
-        padding: 12px;
-        background-color: var(--primary-color);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-    .login-btn:hover {
-        background-color: #d62839;
-    }
+        .login-btn:hover {
+            background-color: #d62839;
+        }
 
-    .forgot-password {
-        margin-top: 15px;
-        font-size: 14px;
-        color: var(--accent-color);
-        text-decoration: underline;
-        cursor: pointer;
-        transition: color 0.3s ease;
-    }
+        .forgot-password {
+            margin-top: 15px;
+            font-size: 14px;
+            color: var(--accent-color);
+            text-decoration: underline;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
 
-    .forgot-password:hover {
-        color: #3a5a78;
-    }
+        .forgot-password:hover {
+            color: #3a5a78;
+        }
 
         /* === DASHBOARD STYLES === */
         .dashboard-container {
@@ -184,13 +174,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            color: white;
+            font-size: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
-        
+
         .sidebar-logo img {
             width: 100%;
             height: 100%;
             object-fit: contain;
+            border-radius: 50%;
         }
 
         .sidebar-title {
@@ -256,7 +250,6 @@
             flex: 1;
             overflow-y: auto;
             background-color: white;
-            align-items: center;
         }
 
         .header {
@@ -486,52 +479,28 @@
             color: var(--text-dark);
         }
 
-        .form-input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 2px rgba(69, 123, 157, 0.2);
-        }
-
-        .form-textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 16px;
-            resize: vertical;
-            min-height: 100px;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-textarea:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 2px rgba(69, 123, 157, 0.2);
-        }
-
+        .form-input,
+        .form-textarea,
         .form-select {
             width: 100%;
             padding: 12px 15px;
             border: 1px solid var(--border-color);
             border-radius: 8px;
             font-size: 16px;
-            background-color: white;
             transition: border-color 0.3s ease;
         }
 
+        .form-input:focus,
+        .form-textarea:focus,
         .form-select:focus {
             outline: none;
             border-color: var(--accent-color);
             box-shadow: 0 0 0 2px rgba(69, 123, 157, 0.2);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
         }
 
         .form-button {
@@ -949,18 +918,29 @@
             100% { transform: rotate(360deg); }
         }
 
-        .success-message {
+        .success-message,
+        .error-message {
             display: none;
             position: fixed;
             top: 20px;
             right: 20px;
-            background-color: #4cc9f0;
-            color: white;
-            padding: 15px 20px;
+            padding: 12px 16px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             z-index: 3000;
             animation: fadeInUp 0.5s ease;
+            max-width: 300px;
+            word-wrap: break-word;
+        }
+
+        .success-message {
+            background-color: #4cc9f0;
+            color: white;
+        }
+
+        .error-message {
+            background-color: #e63946;
+            color: white;
         }
 
         @keyframes fadeInUp {
@@ -974,30 +954,13 @@
             }
         }
 
-        .error-message {
-            display: none;
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #e63946;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            z-index: 3000;
-            animation: fadeInUp 0.5s ease;
-        }
-
         /* === RESPONSIVE DESIGN === */
         @media (max-width: 768px) {
             .sidebar {
                 width: 70px;
             }
 
-            .sidebar-title {
-                display: none;
-            }
-
+            .sidebar-title,
             .menu-item span {
                 display: none;
             }
@@ -1012,104 +975,161 @@
                 font-size: 16px;
             }
 
+            .menu-item {
+                padding: 12px 10px;
+                justify-content: center;
+            }
+
+            .menu-item i {
+                font-size: 20px;
+            }
+
+            .header {
+                padding: 12px 15px;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .welcome {
+                font-size: 16px;
+                gap: 10px;
+            }
+
+            .user-avatar {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+
+            .header-icons {
+                gap: 15px;
+            }
+
+            .header-icon {
+                font-size: 18px;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .page-title {
+                font-size: 20px;
+            }
+
             .stats-container {
                 flex-direction: column;
+                gap: 15px;
+            }
+
+            .stat-card {
+                min-width: 100%;
+                padding: 15px;
+            }
+
+            .stat-value {
+                font-size: 28px;
+            }
+
+            .stat-label {
+                font-size: 12px;
+            }
+
+            .form-container,
+            .profile-container,
+            .report-container {
+                padding: 15px;
+            }
+
+            .form-title {
+                font-size: 18px;
             }
 
             .form-row {
                 flex-direction: column;
+                gap: 10px;
             }
 
             .form-col {
                 min-width: 100%;
             }
 
-            .header {
-                flex-direction: column;
+            .form-input,
+            .form-textarea,
+            .form-select {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+
+            .form-button {
+                padding: 10px;
+                font-size: 16px;
+            }
+
+            .table th,
+            .table td {
+                padding: 10px;
+                font-size: 13px;
+            }
+
+            .table-actions {
+                justify-content: center;
+            }
+
+            .btn-action {
+                padding: 5px 8px;
+                font-size: 11px;
+                min-width: 50px;
+            }
+
+            .profile-header {
                 gap: 15px;
             }
 
-            .welcome {
-                width: 100%;
-                justify-content: space-between;
+            .profile-avatar {
+                width: 70px;
+                height: 70px;
+                font-size: 28px;
             }
 
-            .header-icons {
-                width: 100%;
-                justify-content: space-between;
+            .avatar-upload {
+                width: 24px;
+                height: 24px;
+                font-size: 12px;
+            }
+
+            .profile-name {
+                font-size: 18px;
             }
         }
 
-        /* === FILE INPUT STYLING === */
-        .file-input-wrapper {
-            position: relative;
-            overflow: hidden;
-            display: inline-block;
+        @media (max-width: 480px) {
+            .sidebar {
+                position: absolute;
+                z-index: 100;
+                height: 100vh;
+                left: -250px;
+                transition: left 0.3s ease;
+            }
+            
+            .sidebar.active {
+                left: 0;
+            }
+            
+            .toggle-sidebar {
+                display: block;
+            }
         }
 
-        .file-input {
-            position: absolute;
-            left: 0;
-            top: 0;
-            opacity: 0;
-            cursor: pointer;
-            width: 100%;
-            height: 100%;
-        }
-
-        .file-input-label {
-            padding: 10px 20px;
-            background-color: var(--accent-color);
-            color: white;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .file-input-label:hover {
-            background-color: #3a5a78;
-        }
-
-        .file-name {
-            margin-top: 10px;
-            font-size: 14px;
-            color: var(--text-light);
-        }
-
-        /* === NOTIFICATION BADGE === */
-        .notification-badge {
-            position: relative;
-        }
-
-        .badge {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        /* === VIEW MODAL === */
-        #viewModal .modal-content {
-            max-width: 600px;
-        }
-
-        #viewModal .modal-body p {
-            margin: 10px 0;
-            font-size: 16px;
-        }
-
-        #viewModal .modal-body strong {
+        /* Toggle sidebar button for mobile */
+        .toggle-sidebar {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 20px;
             color: var(--text-dark);
-            font-weight: 600;
+            cursor: pointer;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -1118,9 +1138,1892 @@
     <div class="login-container" id="loginPage">
         <div class="login-box">
             <div class="login-logo">
-                <img src="https://i.postimg.cc/NfP8t8Jv/logo.png" alt="Blood Donation System Logo">
+                <!-- Replace with your logo -->
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2U2Mzk0NiI+PHBhdGggZD0iTTEyIDJDNy41ODIgMiA0IDUuNTgyIDQgMTJzMy41ODIgOCA4IDhzOC0zLjU4MiA4LThTNi40MTggMiAxMiAyem0wIDE4Yy00LjQxOCAwLTgtMy41ODItOC04czMuNTgyLTggOC04IDggMy41ODIgOCA4LTMuNTgyIDgtOCA4eiIvPjxwYXRoIGQ9Ik0xMiA2Yy0zLjMxNCAwLTYgMi42ODYtNiA2czIuNjg2IDYgNiA2IDYtMi42ODYgNi02LTIuNjg2LTYtNi02em0wIDEwYy0yLjIxNiAwLTQtMS43ODQtNC00czEuNzg0LTQgNC00IDQgMS43ODQgNCA0LTEuNzg0IDQtNCA0eiIvPjwvc3ZnPg==" alt="Blood Drop">
             </div>
             <h2 class="login-title">Admin Login</h2>
             <form id="loginForm">
                 <div class="form-group">
-                    <label for="username">Username *
+                    <label for="username">Username *</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password *</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+                <div class="forgot-password" id="forgotPassword">Forgot Password</div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container" id="dashboardContainer">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button class="toggle-sidebar" id="toggleSidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="sidebar-logo">
+                    <!-- Replace with your logo -->
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2U2Mzk0NiI+PHBhdGggZD0iTTEyIDJDNy41ODIgMiA0IDUuNTgyIDQgMTJzMy41ODIgOCA4IDhzOC0zLjU4MiA4LThTNi40MTggMiAxMiAyem0wIDE4Yy00LjQxOCAwLTgtMy41ODItOC04czMuNTgyLTggOC04IDggMy41ODIgOCA4LTMuNTgyIDgtOCA4eiIvPjxwYXRoIGQ9Ik0xMiA2Yy0zLjMxNCAwLTYgMi42ODYtNiA2czIuNjg2IDYgNiA2IDYtMi42ODYgNi02LTIuNjg2LTYtNi02em0wIDEwYy0yLjIxNiAwLTQtMS43ODQtNC00czEuNzg0LTQgNC00IDQgMS43ODQgNCA0LTEuNzg0IDQtNCA0eiIvPjwvc3ZnPg==" alt="Blood Drop">
+                </div>
+                <div class="sidebar-title">Blood Donation System</div>
+            </div>
+            <div class="sidebar-menu">
+                <a href="#" class="menu-item active" data-page="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="menu-item" data-page="addDonor">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Add Donor</span>
+                </a>
+                <a href="#" class="menu-item" data-page="addRequester">
+                    <i class="fas fa-hand-holding-medical"></i>
+                    <span>Add Requester</span>
+                </a>
+                <a href="#" class="menu-item" data-page="requesterList">
+                    <i class="fas fa-users"></i>
+                    <span>Requester List</span>
+                </a>
+                <a href="#" class="menu-item" data-page="donorList">
+                    <i class="fas fa-user-friends"></i>
+                    <span>Donor List</span>
+                </a>
+                <a href="#" class="menu-item" data-page="generateReport">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Generate Report</span>
+                </a>
+            </div>
+            <div class="sidebar-footer">
+                <a href="#" class="logout-btn" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <div class="welcome">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span>Hello Admin!</span>
+                </div>
+                <div class="header-icons">
+                    <div class="header-icon notification-badge" id="notificationsIcon">
+                        <i class="far fa-bell"></i>
+                        <span class="badge">0</span>
+                    </div>
+                    <div class="header-icon" id="profileIcon">
+                        <i class="far fa-user"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Page -->
+            <div class="content" id="dashboardPage">
+                <h1 class="page-title">Dashboard</h1>
+                <div class="stats-container">
+                    <div class="stat-card blue-card">
+                        <div class="stat-value" id="donorCount">0</div>
+                        <div class="stat-label">Blood Donors Available</div>
+                    </div>
+                    <div class="stat-card pink-card">
+                        <div class="stat-value" id="requestCount">0</div>
+                        <div class="stat-label">Blood Requests</div>
+                    </div>
+                </div>
+                <div class="recent-donations">
+                    <h2 class="section-title">Recent Donations</h2>
+                    <div class="donation-list" id="recentDonationsList">
+                        <!-- Recent donations will be populated here -->
+                    </div>
+                    <div class="see-more">See More</div>
+                </div>
+            </div>
+
+            <!-- Add Donor Page -->
+            <div class="content" id="addDonorPage" style="display: none;">
+                <h1 class="page-title">Add New Donor</h1>
+                <div class="form-container">
+                    <h2 class="form-title">Donor Information</h2>
+                    <form id="addDonorForm">
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="form-label" for="donorName">Full Name *</label>
+                                <input type="text" id="donorName" class="form-input" placeholder="Enter donor's full name" required>
+                            </div>
+                            <div class="form-col">
+                                <label class="form-label" for="donorDob">Date of Birth *</label>
+                                <input type="date" id="donorDob" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="form-label" for="donorGender">Gender *</label>
+                                <select id="donorGender" class="form-select" required>
+                                    <option value="">Select gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-col">
+                                <label class="form-label" for="donorBloodType">Blood Type *</label>
+                                <select id="donorBloodType" class="form-select" required>
+                                    <option value="">Select blood type</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="form-label" for="donorPhone">Phone Number *</label>
+                                <input type="tel" id="donorPhone" class="form-input" placeholder="Enter phone number" required>
+                            </div>
+                            <div class="form-col">
+                                <label class="form-label" for="donorEmail">Email Address</label>
+                                <input type="email" id="donorEmail" class="form-input" placeholder="Enter email address">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="form-label" for="donorAddress">Address</label>
+                                <textarea id="donorAddress" class="form-textarea" placeholder="Enter donor's address"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="form-label" for="donorLastDonation">Last Donation Date</label>
+                                <input type="date" id="donorLastDonation" class="form-input">
+                            </div>
+                            <div class="form-col">
+                                <label class="form-label" for="donorAvailability">Availability</label>
+                                <select id="donorAvailability" class="form-select">
+                                    <option value="available">Available</option>
+                                    <option value="unavailable">Unavailable</option>
+                                    <option value="pending">Pending Verification</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="form-button btn-secondary" id="cancelAddDonor">Cancel</button>
+                            <button type="submit" class="form-button">Add Donor</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Add Requester Page -->
+            <div class="content" id="addRequesterPage" style="display: none;">
+                <h1 class="page-title">Add New Requester</h1>
+                <div class="form-container">
+                    <h2 class="form-title">Requester Information</h2>
+                    <form id="addRequesterForm">
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="form-label" for="requesterName">Full Name *</label>
+                                <input type="text" id="requesterName" class="form-input" placeholder="Enter requester's full name" required>
+                            </div>
+                            <div class="form-col">
+                                <label class="form-label" for="requesterDob">Date of Birth *</label>
+                                <input type="date" id="requesterDob" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="form-label" for="requesterBloodType">Blood Type *</label>
+                                <select id="requesterBloodType" class="form-select" required>
+                                    <option value="">Select blood type</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                </select>
+                            </div>
+                            <div class="form-col">
+                                <label class="form-label" for="requesterQuantity">Quantity (Units) *</label>
+                                <input type="number" id="requesterQuantity" class="form-input" placeholder="Enter quantity needed" min="1" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="form-label" for="requesterUrgency">Urgency *</label>
+                                <select id="requesterUrgency" class="form-select" required>
+                                    <option value="low">Low</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="high">High</option>
+                                </select>
+                            </div>
+                            <div class="form-col">
+                                <label class="form-label" for="requesterDateRequested">Date Requested *</label>
+                                <input type="date" id="requesterDateRequested" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="form-label" for="requesterContact">Contact Information *</label>
+                                <input type="text" id="requesterContact" class="form-input" placeholder="Phone/Email" required>
+                            </div>
+                            <div class="form-col">
+                                <label class="form-label" for="requesterStatus">Status</label>
+                                <select id="requesterStatus" class="form-select">
+                                    <option value="pending">Pending</option>
+                                    <option value="fulfilled">Fulfilled</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="form-button btn-secondary" id="cancelAddRequester">Cancel</button>
+                            <button type="submit" class="form-button">Add Requester</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Requester List Page -->
+            <div class="content" id="requesterListPage" style="display: none;">
+                <h1 class="page-title">Requester List</h1>
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Blood Type</th>
+                                <th>Quantity</th>
+                                <th>Urgency</th>
+                                <th>Date Requested</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="requesterTableBody">
+                            <!-- Requesters will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Donor List Page -->
+            <div class="content" id="donorListPage" style="display: none;">
+                <h1 class="page-title">Donor List</h1>
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Blood Type</th>
+                                <th>Age</th>
+                                <th>Gender</th>
+                                <th>Last Donation</th>
+                                <th>Availability</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="donorTableBody">
+                            <!-- Donors will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Generate Report Page -->
+            <div class="content" id="generateReportPage" style="display: none;">
+                <h1 class="page-title">Generate Report</h1>
+                <div class="report-container">
+                    <h2 class="form-title">Report Parameters</h2>
+                    <div class="report-filters">
+                        <div class="form-col">
+                            <label class="form-label" for="reportType">Report Type *</label>
+                            <select id="reportType" class="form-select" required>
+                                <option value="">Select report type</option>
+                                <option value="monthly">Monthly Report</option>
+                                <option value="yearly">Yearly Report</option>
+                                <option value="custom">Custom Range</option>
+                            </select>
+                        </div>
+                        <div class="form-col">
+                            <label class="form-label" for="reportMonth">Month</label>
+                            <select id="reportMonth" class="form-select">
+                                <option value="">Select month</option>
+                                <option value="january">January</option>
+                                <option value="february">February</option>
+                                <option value="march">March</option>
+                                <option value="april">April</option>
+                                <option value="may">May</option>
+                                <option value="june">June</option>
+                                <option value="july">July</option>
+                                <option value="august">August</option>
+                                <option value="september">September</option>
+                                <option value="october">October</option>
+                                <option value="november">November</option>
+                                <option value="december">December</option>
+                            </select>
+                        </div>
+                        <div class="form-col">
+                            <label class="form-label" for="reportYear">Year</label>
+                            <select id="reportYear" class="form-select">
+                                <option value="">Select year</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                            </select>
+                        </div>
+                        <div class="form-col">
+                            <label class="form-label" for="reportBloodType">Blood Type</label>
+                            <select id="reportBloodType" class="form-select">
+                                <option value="">All Blood Types</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="form-button btn-secondary" id="clearFilters">Clear Filters</button>
+                        <button type="button" class="form-button" id="generateReportBtn">Generate Report</button>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-placeholder">
+                            <i class="fas fa-chart-line" style="font-size: 30px; color: #6c757d; margin-bottom: 8px;"></i>
+                            <p>Select parameters and click "Generate Report" to view statistics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Page -->
+            <div class="content" id="profilePage" style="display: none;">
+                <h1 class="page-title">Profile Settings</h1>
+                <div class="profile-container">
+                    <div class="profile-header">
+                        <div class="profile-avatar" id="avatarPreview">
+                            <i class="fas fa-user"></i>
+                            <div class="avatar-upload">
+                                <i class="fas fa-camera"></i>
+                                <input type="file" class="file-input" accept="image/*" id="profilePicture">
+                            </div>
+                        </div>
+                        <div class="profile-info">
+                            <div class="profile-name">Admin User</div>
+                            <div class="profile-email">admin@example.com</div>
+                        </div>
+                    </div>
+                    <form id="profileForm">
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="form-label" for="profileName">Full Name *</label>
+                                <input type="text" id="profileName" class="form-input" value="Admin User" required>
+                            </div>
+                            <div class="form-col">
+                                <label class="form-label" for="profileEmail">Email Address *</label>
+                                <input type="email" id="profileEmail" class="form-input" value="admin@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="form-label" for="profilePhone">Phone Number</label>
+                                <input type="tel" id="profilePhone" class="form-input" value="+975 12345678">
+                            </div>
+                            <div class="form-col">
+                                <label class="form-label" for="profileRole">Role</label>
+                                <input type="text" id="profileRole" class="form-input" value="Administrator" readonly>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="form-label" for="currentPassword">Current Password</label>
+                                <input type="password" id="currentPassword" class="form-input" placeholder="Enter current password">
+                            </div>
+                            <div class="form-col">
+                                <label class="form-label" for="newPassword">New Password</label>
+                                <input type="password" id="newPassword" class="form-input" placeholder="Enter new password">
+                                <div class="password-strength">
+                                    <div class="strength-bar">
+                                        <div class="strength-fill" id="strengthFill"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="form-button btn-secondary" id="cancelProfile">Cancel</button>
+                            <button type="submit" class="form-button">Update Profile</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal" id="forgotPasswordModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Forgot Password</h2>
+                <div class="close-modal" id="closeForgotPassword">&times;</div>
+            </div>
+            <div class="modal-body">
+                <div class="reset-step active" id="step1">
+                    <p>Please enter your email address to receive a verification code.</p>
+                    <div class="form-group">
+                        <label for="resetEmail">Email Address *</label>
+                        <input type="email" id="resetEmail" class="form-input" placeholder="Enter your email address" required>
+                    </div>
+                </div>
+                <div class="reset-step" id="step2">
+                    <p>We've sent a verification code to your email. Please enter the code below.</p>
+                    <div class="verification-code">
+                        <input type="text" class="code-input" maxlength="1" oninput="moveToNext(this, 1)">
+                        <input type="text" class="code-input" maxlength="1" oninput="moveToNext(this, 2)">
+                        <input type="text" class="code-input" maxlength="1" oninput="moveToNext(this, 3)">
+                        <input type="text" class="code-input" maxlength="1" oninput="moveToNext(this, 4)">
+                        <input type="text" class="code-input" maxlength="1" oninput="moveToNext(this, 5)">
+                        <input type="text" class="code-input" maxlength="1" oninput="moveToNext(this, 6)">
+                    </div>
+                </div>
+                <div class="reset-step" id="step3">
+                    <p>Please create a new password.</p>
+                    <div class="form-group">
+                        <label for="newResetPassword">New Password *</label>
+                        <input type="password" id="newResetPassword" class="form-input" placeholder="Enter new password" required>
+                        <div class="password-strength">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="resetStrengthFill"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmResetPassword">Confirm New Password *</label>
+                        <input type="password" id="confirmResetPassword" class="form-input" placeholder="Confirm new password" required>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="modal-btn modal-btn-secondary" id="prevStep">Previous</button>
+                <button type="button" class="modal-btn modal-btn-primary" id="nextStep">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Requester Modal -->
+    <div class="modal" id="viewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Requester Details</h2>
+                <div class="close-modal" onclick="closeViewModal()">&times;</div>
+            </div>
+            <div class="modal-body">
+                <p><strong>Name:</strong> <span id="viewName">Loading...</span></p>
+                <p><strong>Blood Type:</strong> <span id="viewBloodType">Loading...</span></p>
+                <p><strong>Quantity:</strong> <span id="viewQuantity">Loading...</span></p>
+                <p><strong>Urgency:</strong> <span id="viewUrgency">Loading...</span></p>
+                <p><strong>Date Requested:</strong> <span id="viewDate">Loading...</span></p>
+                <p><strong>Status:</strong> <span id="viewStatus">Loading...</span></p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-secondary" onclick="closeViewModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading" id="loadingSpinner">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        Operation completed successfully!
+    </div>
+
+    <!-- Error Message -->
+    <div class="error-message" id="errorMessage">
+        An error occurred. Please try again.
+    </div>
+
+    <script>
+        // ======================
+        // FRONTEND-BACKEND INTEGRATION WITH ALL FEATURES
+        // ======================
+
+        // API Base URL - Change this if your backend runs on a different port/host
+        const API_BASE_URL = 'http://localhost:5000/api';
+
+        // DOM Elements
+        const loginPage = document.getElementById('loginPage');
+        const dashboardContainer = document.getElementById('dashboardContainer');
+        const loginForm = document.getElementById('loginForm');
+        const forgotPassword = document.getElementById('forgotPassword');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const sidebarMenuItems = document.querySelectorAll('.menu-item');
+        const notificationsIcon = document.getElementById('notificationsIcon');
+        const profileIcon = document.getElementById('profileIcon');
+        const forgotPasswordModal = document.getElementById('forgotPasswordModal');
+        const closeForgotPassword = document.getElementById('closeForgotPassword');
+        const resetEmail = document.getElementById('resetEmail');
+        const nextStep = document.getElementById('nextStep');
+        const prevStep = document.getElementById('prevStep');
+        const step1 = document.getElementById('step1');
+        const step2 = document.getElementById('step2');
+        const step3 = document.getElementById('step3');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+        
+        // Page Elements
+        const dashboardPage = document.getElementById('dashboardPage');
+        const addDonorPage = document.getElementById('addDonorPage');
+        const addRequesterPage = document.getElementById('addRequesterPage');
+        const requesterListPage = document.getElementById('requesterListPage');
+        const donorListPage = document.getElementById('donorListPage');
+        const generateReportPage = document.getElementById('generateReportPage');
+        const profilePage = document.getElementById('profilePage');
+        const donorCountElement = document.getElementById('donorCount');
+        const requestCountElement = document.getElementById('requestCount');
+        const recentDonationsList = document.getElementById('recentDonationsList');
+        const requesterTableBody = document.getElementById('requesterTableBody');
+        const donorTableBody = document.getElementById('donorTableBody');
+        
+        // Form Elements
+        const addDonorForm = document.getElementById('addDonorForm');
+        const addRequesterForm = document.getElementById('addRequesterForm');
+        const cancelAddDonor = document.getElementById('cancelAddDonor');
+        const cancelAddRequester = document.getElementById('cancelAddRequester');
+        const profileForm = document.getElementById('profileForm');
+        const cancelProfile = document.getElementById('cancelProfile');
+        const clearFilters = document.getElementById('clearFilters');
+        const generateReportBtn = document.getElementById('generateReportBtn');
+        
+        // Current Step for Password Reset
+        let currentStep = 1;
+        
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up event listeners
+            setupEventListeners();
+            
+            // Check if user is already logged in
+            checkLoggedInStatus();
+        });
+        
+        // Setup all event listeners
+        function setupEventListeners() {
+            // Login Form
+            loginForm.addEventListener('submit', handleLogin);
+            
+            // Forgot Password
+            forgotPassword.addEventListener('click', showForgotPasswordModal);
+            
+            // Logout
+            logoutBtn.addEventListener('click', handleLogout);
+            
+            // Sidebar Menu
+            sidebarMenuItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    setActivePage(this.getAttribute('data-page'));
+                    
+                    // Load data when switching to certain pages
+                    if (this.getAttribute('data-page') === 'donorList') {
+                        loadDonors();
+                    } else if (this.getAttribute('data-page') === 'requesterList') {
+                        loadRequesters();
+                    } else if (this.getAttribute('data-page') === 'profile') {
+                        loadProfile();
+                    } else if (this.getAttribute('data-page') === 'dashboard') {
+                        loadDashboardData();
+                    }
+                    
+                    // Close sidebar on mobile after selection
+                    if (window.innerWidth <= 768) {
+                        document.getElementById('sidebar').classList.remove('active');
+                    }
+                });
+            });
+            
+            // Toggle Sidebar for Mobile
+            const toggleSidebar = document.getElementById('toggleSidebar');
+            if (toggleSidebar) {
+                toggleSidebar.addEventListener('click', function() {
+                    document.getElementById('sidebar').classList.toggle('active');
+                });
+            }
+            
+            // Notifications (FIXED - now shows real notifications)
+            notificationsIcon.addEventListener('click', loadNotifications);
+            
+            // Profile
+            profileIcon.addEventListener('click', showProfilePage);
+            
+            // Close Forgot Password Modal
+            closeForgotPassword.addEventListener('click', closeForgotPasswordModal);
+            
+            // Password Reset Steps
+            nextStep.addEventListener('click', goToNextStep);
+            prevStep.addEventListener('click', goToPrevStep);
+            
+            // Form Submissions
+            addDonorForm.addEventListener('submit', handleAddDonor);
+            addRequesterForm.addEventListener('submit', handleAddRequester);
+            profileForm.addEventListener('submit', handleUpdateProfile);
+            
+            // Cancel Buttons
+            cancelAddDonor.addEventListener('click', cancelAddDonorForm);
+            cancelAddRequester.addEventListener('click', cancelAddRequesterForm);
+            cancelProfile.addEventListener('click', cancelProfileForm);
+            
+            // Clear Filters
+            clearFilters.addEventListener('click', clearReportFilters);
+            
+            // Generate Report
+            generateReportBtn.addEventListener('click', generateReport);
+            
+            // Password Strength
+            const newPasswordInput = document.getElementById('newPassword');
+            const newResetPasswordInput = document.getElementById('newResetPassword');
+            
+            if (newPasswordInput) {
+                newPasswordInput.addEventListener('input', updatePasswordStrength);
+            }
+            
+            if (newResetPasswordInput) {
+                newResetPasswordInput.addEventListener('input', updateResetPasswordStrength);
+            }
+            
+            // File Input for Profile Picture
+            const profilePictureInput = document.getElementById('profilePicture');
+            if (profilePictureInput) {
+                profilePictureInput.addEventListener('change', handleProfilePictureUpload);
+            }
+        }
+        
+        // ======================
+        // AUTHENTICATION FUNCTIONS
+        // ======================
+        
+        // Handle Login - CONNECTED TO BACKEND
+        async function handleLogin(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            
+            if (!username || !password) {
+                showError('Please fill in all fields');
+                return;
+            }
+            
+            showLoading();
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    // Save token and admin data to localStorage
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('admin', JSON.stringify(data.admin));
+                    
+                    // Hide login page, show dashboard
+                    loginPage.style.display = 'none';
+                    dashboardContainer.style.display = 'flex';
+                    
+                    // Hide loading
+                    hideLoading();
+                    
+                    // Show success message
+                    showSuccess('Login successful!');
+                    
+                    // Set active page to dashboard
+                    setActivePage('dashboard');
+                    
+                    // Load dashboard data
+                    loadDashboardData();
+                } else {
+                    // Login failed
+                    hideLoading();
+                    showError(data.message || 'Invalid username or password');
+                }
+            } catch (error) {
+                hideLoading();
+                showError('Network error. Please check if backend is running.');
+            }
+        }
+        
+        // Handle Logout
+        function handleLogout(e) {
+            e.preventDefault();
+            
+            // Remove login status from localStorage
+            localStorage.removeItem('token');
+            localStorage.removeItem('admin');
+            
+            // Show login page, hide dashboard
+            loginPage.style.display = 'flex';
+            dashboardContainer.style.display = 'none';
+            
+            // Reset form
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            
+            // Show success message
+            showSuccess('Logged out successfully!');
+        }
+        
+        // Check Logged In Status
+        function checkLoggedInStatus() {
+            const token = localStorage.getItem('token');
+            
+            if (token) {
+                // User is logged in
+                loginPage.style.display = 'none';
+                dashboardContainer.style.display = 'flex';
+                
+                // Set active page to dashboard
+                setActivePage('dashboard');
+                loadDashboardData();
+            } else {
+                // User is not logged in
+                loginPage.style.display = 'flex';
+                dashboardContainer.style.display = 'none';
+            }
+        }
+        
+        // Get auth header for API calls
+        function getAuthHeader() {
+            const token = localStorage.getItem('token');
+            return token ? { 'Authorization': `Bearer ${token}` } : {};
+        }
+        
+        // ======================
+        // PAGE NAVIGATION
+        // ======================
+        
+        // Set Active Page
+        function setActivePage(pageName) {
+            // Hide all pages
+            dashboardPage.style.display = 'none';
+            addDonorPage.style.display = 'none';
+            addRequesterPage.style.display = 'none';
+            requesterListPage.style.display = 'none';
+            donorListPage.style.display = 'none';
+            generateReportPage.style.display = 'none';
+            profilePage.style.display = 'none';
+            
+            // Show selected page
+            switch(pageName) {
+                case 'dashboard':
+                    dashboardPage.style.display = 'block';
+                    break;
+                case 'addDonor':
+                    addDonorPage.style.display = 'block';
+                    break;
+                case 'addRequester':
+                    addRequesterPage.style.display = 'block';
+                    break;
+                case 'requesterList':
+                    requesterListPage.style.display = 'block';
+                    break;
+                case 'donorList':
+                    donorListPage.style.display = 'block';
+                    break;
+                case 'generateReport':
+                    generateReportPage.style.display = 'block';
+                    break;
+                case 'profile':
+                    profilePage.style.display = 'block';
+                    break;
+            }
+            
+            // Update active menu item
+            sidebarMenuItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-page') === pageName) {
+                    item.classList.add('active');
+                }
+            });
+        }
+        
+        // ======================
+        // DASHBOARD FUNCTIONS
+        // ======================
+        
+        // Load Dashboard Data
+        async function loadDashboardData() {
+            showLoading();
+            
+            try {
+                // Fetch donors and requesters in parallel
+                const [donorsResponse, requestersResponse] = await Promise.all([
+                    fetch(`${API_BASE_URL}/donors`, { headers: getAuthHeader() }),
+                    fetch(`${API_BASE_URL}/requesters`, { headers: getAuthHeader() })
+                ]);
+                
+                if (donorsResponse.ok && requestersResponse.ok) {
+                    const donors = await donorsResponse.json();
+                    const requesters = await requestersResponse.json();
+                    
+                    // Update stats
+                    donorCountElement.textContent = donors.length;
+                    requestCountElement.textContent = requesters.length;
+                    
+                    // Update recent donations
+                    updateRecentDonations(donors);
+                    
+                    // Update notifications badge
+                    updateNotificationBadge(requesters);
+                }
+            } catch (error) {
+                showError('Failed to load dashboard data');
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        // Update Recent Donations
+        function updateRecentDonations(donors) {
+            // Sort donors by last_donation (most recent first)
+            const sortedDonors = donors
+                .filter(donor => donor.last_donation)
+                .sort((a, b) => new Date(b.last_donation) - new Date(a.last_donation))
+                .slice(0, 4); // Get top 4
+            
+            if (sortedDonors.length === 0) {
+                recentDonationsList.innerHTML = '<p style="text-align: center; color: #6c757d;">No recent donations</p>';
+                return;
+            }
+            
+            recentDonationsList.innerHTML = sortedDonors.map(donor => `
+                <div class="donation-item">
+                    <div class="donor-info">
+                        <div class="donor-avatar">${donor.full_name.charAt(0)}</div>
+                        <div class="donor-details">
+                            <div class="donor-name">${donor.full_name}</div>
+                            <div class="donor-date">${donor.last_donation}</div>
+                        </div>
+                    </div>
+                    <div class="blood-type">${donor.blood_type}</div>
+                </div>
+            `).join('');
+        }
+        
+        // Update Notification Badge
+        function updateNotificationBadge(requesters) {
+            const pendingCount = requesters.filter(r => r.status === 'pending').length;
+            const badge = document.querySelector('.badge');
+            
+            if (badge) {
+                badge.textContent = pendingCount;
+                badge.style.display = pendingCount > 0 ? 'block' : 'none';
+            }
+        }
+        
+        // ======================
+        // DONOR FUNCTIONS
+        // ======================
+        
+        // Load Donors from Backend
+        async function loadDonors() {
+            showLoading();
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/donors`, {
+                    headers: getAuthHeader()
+                });
+                
+                if (response.ok) {
+                    const donors = await response.json();
+                    populateDonorTable(donors);
+                } else {
+                    const error = await response.json();
+                    showError(error.message || 'Failed to load donors');
+                }
+            } catch (error) {
+                showError('Network error. Please try again.');
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        // Populate Donor Table
+        function populateDonorTable(donors) {
+            donorTableBody.innerHTML = '';
+            
+            donors.forEach(donor => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${donor.full_name}</td>
+                    <td>${donor.blood_type}</td>
+                    <td>${donor.age}</td>
+                    <td>${donor.gender.charAt(0).toUpperCase() + donor.gender.slice(1)}</td>
+                    <td>${donor.last_donation ? donor.last_donation : 'Never'}</td>
+                    <td><span style="color: ${donor.availability === 'available' ? '#4cc9f0' : '#457b9d'}; font-weight: 600;">${donor.availability.charAt(0).toUpperCase() + donor.availability.slice(1)}</span></td>
+                    <td class="table-actions">
+                        <button class="btn-action btn-view" onclick="viewDonor(${donor.id})">View</button>
+                        <button class="btn-action btn-edit" onclick="editDonor(${donor.id})">Edit</button>
+                        <button class="btn-action btn-delete" onclick="deleteDonor(${donor.id})">Delete</button>
+                    </td>
+                `;
+                donorTableBody.appendChild(row);
+            });
+        }
+        
+        // Handle Add Donor Form - CONNECTED TO BACKEND
+        async function handleAddDonor(e) {
+            e.preventDefault();
+            
+            const donorData = {
+                full_name: document.getElementById('donorName').value.trim(),
+                date_of_birth: document.getElementById('donorDob').value,
+                age: calculateAge(document.getElementById('donorDob').value),
+                gender: document.getElementById('donorGender').value,
+                blood_type: document.getElementById('donorBloodType').value,
+                phone: document.getElementById('donorPhone').value.trim(),
+                email: document.getElementById('donorEmail').value.trim() || null,
+                address: document.getElementById('donorAddress').value.trim() || null,
+                last_donation: document.getElementById('donorLastDonation').value || null,
+                availability: document.getElementById('donorAvailability').value
+            };
+            
+            // Validate required fields
+            if (!donorData.full_name || !donorData.date_of_birth || !donorData.gender || !donorData.blood_type || !donorData.phone) {
+                showError('Please fill in all required fields');
+                return;
+            }
+            
+            showLoading();
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/donors`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        ...getAuthHeader()
+                    },
+                    body: JSON.stringify(donorData)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    hideLoading();
+                    showSuccess('Donor added successfully!');
+                    addDonorForm.reset();
+                    setActivePage('dashboard');
+                    loadDashboardData(); // Refresh dashboard stats
+                } else {
+                    hideLoading();
+                    showError(result.message || 'Failed to add donor');
+                }
+            } catch (error) {
+                hideLoading();
+                showError('Network error. Please try again.');
+            }
+        }
+        
+        // Calculate age from date of birth
+        function calculateAge(dob) {
+            const today = new Date();
+            const birthDate = new Date(dob);
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            
+            return age;
+        }
+        
+        // View Donor
+        async function viewDonor(id) {
+            showLoading();
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/donors/${id}`, {
+                    headers: getAuthHeader()
+                });
+                
+                if (response.ok) {
+                    const donor = await response.json();
+                    alert(`Viewing Donor ID: ${donor.id}\nName: ${donor.full_name}\nBlood Type: ${donor.blood_type}\nAge: ${donor.age}\nGender: ${donor.gender}\nLast Donation: ${donor.last_donation || 'Never'}\nAvailability: ${donor.availability}`);
+                } else {
+                    const error = await response.json();
+                    showError(error.message || 'Failed to load donor details');
+                }
+            } catch (error) {
+                showError('Network error. Please try again.');
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        // Edit Donor
+        async function editDonor(id) {
+            showSuccess(`Editing donor #${id}`);
+            alert(`In a complete implementation, this would open an edit form pre-filled with donor #${id} data.`);
+        }
+        
+        // Delete Donor - CONNECTED TO BACKEND
+        async function deleteDonor(id) {
+            if (confirm(`Are you sure you want to delete Donor #${id}?`)) {
+                showLoading();
+                
+                try {
+                    const response = await fetch(`${API_BASE_URL}/donors/${id}`, {
+                        method: 'DELETE',
+                        headers: getAuthHeader()
+                    });
+                    
+                    if (response.ok) {
+                        showSuccess(`Donor #${id} deleted successfully!`);
+                        // Reload donors list
+                        loadDonors();
+                        // Refresh dashboard
+                        loadDashboardData();
+                    } else {
+                        const error = await response.json();
+                        showError(error.message || 'Failed to delete donor');
+                    }
+                } catch (error) {
+                    showError('Network error. Please try again.');
+                } finally {
+                    hideLoading();
+                }
+            }
+        }
+        
+        // Cancel Add Donor Form
+        function cancelAddDonorForm() {
+            // Reset form
+            addDonorForm.reset();
+            
+            // Navigate back to dashboard
+            setActivePage('dashboard');
+        }
+        
+        // ======================
+        // REQUESTER FUNCTIONS
+        // ======================
+        
+        // Load Requesters from Backend
+        async function loadRequesters() {
+            showLoading();
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/requesters`, {
+                    headers: getAuthHeader()
+                });
+                
+                if (response.ok) {
+                    const requesters = await response.json();
+                    populateRequesterTable(requesters);
+                } else {
+                    const error = await response.json();
+                    showError(error.message || 'Failed to load requesters');
+                }
+            } catch (error) {
+                showError('Network error. Please try again.');
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        // Handle Add Requester Form - CONNECTED TO BACKEND
+        async function handleAddRequester(e) {
+            e.preventDefault();
+            
+            const requesterData = {
+                name: document.getElementById('requesterName').value.trim(),
+                date_of_birth: document.getElementById('requesterDob').value,
+                blood_type: document.getElementById('requesterBloodType').value,
+                quantity: parseInt(document.getElementById('requesterQuantity').value.trim()),
+                urgency: document.getElementById('requesterUrgency').value,
+                date_requested: document.getElementById('requesterDateRequested').value,
+                contact_info: document.getElementById('requesterContact').value.trim(),
+                status: document.getElementById('requesterStatus').value
+            };
+            
+            // Validate required fields
+            if (!requesterData.name || !requesterData.date_of_birth || !requesterData.blood_type || !requesterData.quantity || !requesterData.urgency || !requesterData.date_requested || !requesterData.contact_info) {
+                showError('Please fill in all required fields');
+                return;
+            }
+            
+            showLoading();
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/requesters`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        ...getAuthHeader()
+                    },
+                    body: JSON.stringify(requesterData)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    hideLoading();
+                    showSuccess('Requester added successfully!');
+                    addRequesterForm.reset();
+                    setActivePage('dashboard');
+                    loadDashboardData(); // Refresh dashboard stats
+                } else {
+                    hideLoading();
+                    showError(result.message || 'Failed to add requester');
+                }
+            } catch (error) {
+                hideLoading();
+                showError('Network error. Please try again.');
+            }
+        }
+        
+        // Populate Requester Table
+        function populateRequesterTable(requesters) {
+            requesterTableBody.innerHTML = '';
+            
+            requesters.forEach(requester => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${requester.name}</td>
+                    <td>${requester.blood_type}</td>
+                    <td>${requester.quantity}</td>
+                    <td><span style="color: ${requester.urgency === 'high' ? '#e63946' : requester.urgency === 'medium' ? '#f7b500' : '#457b9d'}; font-weight: 600;">${requester.urgency.charAt(0).toUpperCase() + requester.urgency.slice(1)}</span></td>
+                    <td>${requester.date_requested}</td>
+                    <td><span style="color: ${requester.status === 'pending' ? '#457b9d' : '#4cc9f0'}; font-weight: 600;">${requester.status.charAt(0).toUpperCase() + requester.status.slice(1)}</span></td>
+                    <td class="table-actions">
+                        <button class="btn-action btn-view" onclick="viewRequester(${requester.id})">View</button>
+                        <button class="btn-action btn-edit" onclick="editRequester(${requester.id})">Edit</button>
+                        <button class="btn-action btn-delete" onclick="deleteRequester(${requester.id})">Delete</button>
+                    </td>
+                `;
+                requesterTableBody.appendChild(row);
+            });
+        }
+        
+        // View Requester
+        async function viewRequester(id) {
+            showLoading();
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/requesters/${id}`, {
+                    headers: getAuthHeader()
+                });
+                
+                if (response.ok) {
+                    const requester = await response.json();
+                    
+                    // Update modal content
+                    document.getElementById('viewName').textContent = requester.name;
+                    document.getElementById('viewBloodType').textContent = requester.blood_type;
+                    document.getElementById('viewQuantity').textContent = requester.quantity;
+                    document.getElementById('viewUrgency').textContent = requester.urgency.charAt(0).toUpperCase() + requester.urgency.slice(1);
+                    document.getElementById('viewDate').textContent = requester.date_requested;
+                    document.getElementById('viewStatus').textContent = requester.status.charAt(0).toUpperCase() + requester.status.slice(1);
+                    
+                    document.getElementById('viewModal').style.display = 'flex';
+                } else {
+                    const error = await response.json();
+                    showError(error.message || 'Failed to load requester details');
+                }
+            } catch (error) {
+                showError('Network error. Please try again.');
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        function closeViewModal() {
+            document.getElementById('viewModal').style.display = 'none';
+        }
+        
+        // Edit Requester
+        async function editRequester(id) {
+            showSuccess(`Editing requester #${id}`);
+            alert(`In a complete implementation, this would open an edit form pre-filled with requester #${id} data.`);
+        }
+        
+        // Delete Requester - CONNECTED TO BACKEND
+        async function deleteRequester(id) {
+            if (confirm(`Are you sure you want to delete Requester #${id}?`)) {
+                showLoading();
+                
+                try {
+                    const response = await fetch(`${API_BASE_URL}/requesters/${id}`, {
+                        method: 'DELETE',
+                        headers: getAuthHeader()
+                    });
+                    
+                    if (response.ok) {
+                        showSuccess(`Requester #${id} deleted successfully!`);
+                        // Reload requesters list
+                        loadRequesters();
+                        // Refresh dashboard
+                        loadDashboardData();
+                    } else {
+                        const error = await response.json();
+                        showError(error.message || 'Failed to delete requester');
+                    }
+                } catch (error) {
+                    showError('Network error. Please try again.');
+                } finally {
+                    hideLoading();
+                }
+            }
+        }
+        
+        // Cancel Add Requester Form
+        function cancelAddRequesterForm() {
+            // Reset form
+            addRequesterForm.reset();
+            
+            // Navigate back to dashboard
+            setActivePage('dashboard');
+        }
+        
+        // ======================
+        // NOTIFICATIONS FUNCTIONS (FIXED)
+        // ======================
+        
+        // Load Notifications from Backend (FIXED)
+        async function loadNotifications() {
+            showLoading();
+            
+            try {
+                // Fetch donors and requesters
+                const [donorsResponse, requestersResponse] = await Promise.all([
+                    fetch(`${API_BASE_URL}/donors`, { headers: getAuthHeader() }),
+                    fetch(`${API_BASE_URL}/requesters`, { headers: getAuthHeader() })
+                ]);
+                
+                if (donorsResponse.ok && requestersResponse.ok) {
+                    const donors = await donorsResponse.json();
+                    const requesters = await requestersResponse.json();
+                    
+                    // Create notifications
+                    const notifications = [];
+                    
+                    // Pending requesters notification
+                    const pendingRequesters = requesters.filter(r => r.status === 'pending');
+                    if (pendingRequesters.length > 0) {
+                        notifications.push({
+                            id: 1,
+                            message: `${pendingRequesters.length} blood request${pendingRequesters.length > 1 ? 's are' : ' is'} pending`,
+                            time: new Date().toLocaleTimeString(),
+                            type: 'urgent'
+                        });
+                    }
+                    
+                    // Low donor count notification
+                    if (donors.length < 5) {
+                        notifications.push({
+                            id: 2,
+                            message: 'Blood donor count is low',
+                            time: new Date().toLocaleTimeString(),
+                            type: 'warning'
+                        });
+                    }
+                    
+                    // Recent donation notification
+                    const recentDonations = donors.filter(d => d.last_donation && 
+                        new Date(d.last_donation) > new Date(Date.now() - 7 * 24 * 60 * 60 * 1000));
+                    if (recentDonations.length > 0) {
+                        notifications.push({
+                            id: 3,
+                            message: `${recentDonations.length} new donation${recentDonations.length > 1 ? 's' : ''} this week`,
+                            time: new Date().toLocaleTimeString(),
+                            type: 'info'
+                        });
+                    }
+                    
+                    // Show notifications
+                    showNotificationsModal(notifications);
+                }
+            } catch (error) {
+                showError('Failed to load notifications');
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        // Show Notifications Modal (FIXED)
+        function showNotificationsModal(notifications) {
+            // Create modal if it doesn't exist
+            let notificationModal = document.getElementById('notificationModal');
+            if (!notificationModal) {
+                notificationModal = document.createElement('div');
+                notificationModal.id = 'notificationModal';
+                notificationModal.className = 'modal';
+                notificationModal.innerHTML = `
+                    <div class="modal-content" style="max-width: 500px;">
+                        <div class="modal-header">
+                            <h2 class="modal-title">Notifications</h2>
+                            <div class="close-modal" onclick="document.getElementById('notificationModal').style.display='none'">&times;</div>
+                        </div>
+                        <div class="modal-body" id="notificationList">
+                            <!-- Notifications will be inserted here -->
+                        </div>
+                        <div class="modal-footer">
+                            <button class="modal-btn modal-btn-primary" onclick="document.getElementById('notificationModal').style.display='none'">Close</button>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(notificationModal);
+            }
+            
+            // Populate notifications
+            const notificationList = document.getElementById('notificationList');
+            if (notifications.length > 0) {
+                notificationList.innerHTML = notifications.map(n => `
+                    <div style="padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
+                        <span>${n.message}</span>
+                        <span style="color: #6c757d; font-size: 12px;">${n.time}</span>
+                    </div>
+                `).join('');
+            } else {
+                notificationList.innerHTML = '<p style="text-align: center; color: #6c757d;">No notifications</p>';
+            }
+            
+            // Show modal
+            notificationModal.style.display = 'flex';
+            
+            // Update badge
+            const badge = document.querySelector('.badge');
+            if (badge) {
+                badge.textContent = notifications.length;
+                badge.style.display = notifications.length > 0 ? 'block' : 'none';
+            }
+        }
+        
+        // ======================
+        // PROFILE FUNCTIONS
+        // ======================
+        
+        // Load Profile from Backend
+        async function loadProfile() {
+            showLoading();
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/admin/profile`, {
+                    headers: getAuthHeader()
+                });
+                
+                if (response.ok) {
+                    const admin = await response.json();
+                    
+                    // Update profile form with data
+                    document.getElementById('profileName').value = admin.full_name;
+                    document.getElementById('profileEmail').value = admin.email;
+                    document.getElementById('profilePhone').value = admin.phone || '';
+                    
+                    // Update profile display
+                    document.querySelector('.profile-name').textContent = admin.full_name;
+                    document.querySelector('.profile-email').textContent = admin.email;
+                    
+                    // Update avatar if profile picture exists
+                    const avatarPreview = document.getElementById('avatarPreview');
+                    if (admin.profile_picture) {
+                        avatarPreview.style.backgroundImage = `url('${admin.profile_picture}')`;
+                        avatarPreview.style.backgroundColor = 'transparent';
+                        avatarPreview.innerHTML = '';
+                    }
+                } else {
+                    const error = await response.json();
+                    showError(error.message || 'Failed to load profile');
+                }
+            } catch (error) {
+                showError('Network error. Please try again.');
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        // Handle Profile Picture Upload - CONNECTED TO BACKEND
+        async function handleProfilePictureUpload(e) {
+            const file = e.target.files[0];
+            
+            if (file) {
+                // Validate file type
+                const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+                if (!allowedTypes.includes(file.type)) {
+                    showError('Please upload a valid image file (JPEG, PNG, GIF)');
+                    return;
+                }
+                
+                // Validate file size (max 2MB)
+                if (file.size > 2 * 1024 * 1024) {
+                    showError('Image size should not exceed 2MB');
+                    return;
+                }
+                
+                // Create FormData for file upload
+                const formData = new FormData();
+                formData.append('profile_picture', file);
+                
+                showLoading();
+                
+                try {
+                    const response = await fetch(`${API_BASE_URL}/admin/profile`, {
+                        method: 'PUT',
+                        headers: getAuthHeader(),
+                        body: formData
+                    });
+                    
+                    if (response.ok) {
+                        showSuccess('Profile picture updated successfully!');
+                        // Reload profile to get updated data
+                        loadProfile();
+                    } else {
+                        const error = await response.json();
+                        showError(error.message || 'Failed to upload profile picture');
+                    }
+                } catch (error) {
+                    showError('Network error. Please try again.');
+                } finally {
+                    hideLoading();
+                }
+            }
+        }
+        
+        // Handle Update Profile - CONNECTED TO BACKEND
+        async function handleUpdateProfile(e) {
+            e.preventDefault();
+            
+            const profileData = {
+                full_name: document.getElementById('profileName').value.trim(),
+                email: document.getElementById('profileEmail').value.trim(),
+                phone: document.getElementById('profilePhone').value.trim() || null
+            };
+            
+            // Validate required fields
+            if (!profileData.full_name || !profileData.email) {
+                showError('Please fill in all required fields');
+                return;
+            }
+            
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(profileData.email)) {
+                showError('Please enter a valid email address');
+                return;
+            }
+            
+            showLoading();
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/admin/profile`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        ...getAuthHeader()
+                    },
+                    body: JSON.stringify(profileData)
+                });
+                
+                if (response.ok) {
+                    showSuccess('Profile updated successfully!');
+                    // Reload profile to reflect changes
+                    loadProfile();
+                } else {
+                    const error = await response.json();
+                    showError(error.message || 'Failed to update profile');
+                }
+            } catch (error) {
+                showError('Network error. Please try again.');
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        // Cancel Profile Form
+        function cancelProfileForm() {
+            // Reset form to current values
+            loadProfile();
+            
+            // Navigate back to dashboard
+            setActivePage('dashboard');
+        }
+        
+        // ======================
+        // OTHER FUNCTIONS
+        // ======================
+        
+        // Show Forgot Password Modal
+        function showForgotPasswordModal() {
+            forgotPasswordModal.style.display = 'flex';
+            currentStep = 1;
+            updateStepDisplay();
+        }
+        
+        // Close Forgot Password Modal
+        function closeForgotPasswordModal() {
+            forgotPasswordModal.style.display = 'none';
+            resetPasswordForm();
+        }
+        
+        // Go to Next Step in Password Reset
+        function goToNextStep() {
+            if (currentStep === 1) {
+                // Validate email
+                const email = resetEmail.value.trim();
+                if (!email) {
+                    showError('Please enter your email address');
+                    return;
+                }
+                
+                // Validate email format
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    showError('Please enter a valid email address');
+                    return;
+                }
+                
+                // Show loading
+                showLoading();
+                
+                // Simulate sending email (in real app, this would call backend)
+                setTimeout(() => {
+                    hideLoading();
+                    showSuccess('Verification code sent to your email!');
+                    currentStep = 2;
+                    updateStepDisplay();
+                }, 1500);
+                
+            } else if (currentStep === 2) {
+                // Validate verification code
+                const codeInputs = document.querySelectorAll('.code-input');
+                let code = '';
+                let isValid = true;
+                
+                codeInputs.forEach(input => {
+                    if (input.value.trim() === '') {
+                        isValid = false;
+                        input.style.borderColor = '#e63946';
+                    } else {
+                        code += input.value;
+                        input.style.borderColor = '#ced4da';
+                    }
+                });
+                
+                if (!isValid) {
+                    showError('Please enter the complete verification code');
+                    return;
+                }
+                
+                // Show loading
+                showLoading();
+                
+                // Simulate code validation
+                setTimeout(() => {
+                    hideLoading();
+                    showSuccess('Verification successful!');
+                    currentStep = 3;
+                    updateStepDisplay();
+                }, 1500);
+                
+            } else if (currentStep === 3) {
+                // Validate new password
+                const newPassword = document.getElementById('newResetPassword').value.trim();
+                const confirmPassword = document.getElementById('confirmResetPassword').value.trim();
+                
+                if (!newPassword || !confirmPassword) {
+                    showError('Please fill in all password fields');
+                    return;
+                }
+                
+                if (newPassword !== confirmPassword) {
+                    showError('Passwords do not match');
+                    return;
+                }
+                
+                // Validate password strength
+                if (getPasswordStrength(newPassword) < 2) {
+                    showError('Password is too weak. Please use a stronger password');
+                    return;
+                }
+                
+                // Show loading
+                showLoading();
+                
+                // Simulate password update (in real app, this would call backend)
+                setTimeout(() => {
+                    hideLoading();
+                    showSuccess('Password updated successfully!');
+                    closeForgotPasswordModal();
+                    resetPasswordForm();
+                }, 1500);
+            }
+        }
+        
+        // Go to Previous Step in Password Reset
+        function goToPrevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateStepDisplay();
+            }
+        }
+        
+        // Update Step Display
+        function updateStepDisplay() {
+            // Hide all steps
+            step1.style.display = 'none';
+            step2.style.display = 'none';
+            step3.style.display = 'none';
+            
+            // Show current step
+            if (currentStep === 1) {
+                step1.style.display = 'block';
+                prevStep.style.display = 'none';
+            } else if (currentStep === 2) {
+                step2.style.display = 'block';
+                prevStep.style.display = 'inline-block';
+            } else if (currentStep === 3) {
+                step3.style.display = 'block';
+                prevStep.style.display = 'inline-block';
+            }
+            
+            // Update button text
+            if (currentStep === 3) {
+                nextStep.textContent = 'Reset Password';
+            } else {
+                nextStep.textContent = 'Next';
+            }
+        }
+        
+        // Reset Password Form
+        function resetPasswordForm() {
+            resetEmail.value = '';
+            document.querySelectorAll('.code-input').forEach(input => {
+                input.value = '';
+                input.style.borderColor = '#ced4da';
+            });
+            document.getElementById('newResetPassword').value = '';
+            document.getElementById('confirmResetPassword').value = '';
+            document.getElementById('resetStrengthFill').style.width = '0%';
+            document.getElementById('resetStrengthFill').className = 'strength-fill';
+            currentStep = 1;
+            updateStepDisplay();
+        }
+        
+        // Clear Report Filters
+        function clearReportFilters() {
+            document.getElementById('reportType').value = '';
+            document.getElementById('reportMonth').value = '';
+            document.getElementById('reportYear').value = '';
+            document.getElementById('reportBloodType').value = '';
+            
+            // Show chart placeholder
+            document.querySelector('.chart-container').innerHTML = `
+                <div class="chart-placeholder">
+                    <i class="fas fa-chart-line" style="font-size: 30px; color: #6c757d; margin-bottom: 8px;"></i>
+                    <p>Select parameters and click "Generate Report" to view statistics</p>
+                </div>
+            `;
+        }
+        
+        // Generate Report
+        function generateReport() {
+            const reportType = document.getElementById('reportType').value;
+            const reportMonth = document.getElementById('reportMonth').value;
+            const reportYear = document.getElementById('reportYear').value;
+            const reportBloodType = document.getElementById('reportBloodType').value;
+            
+            if (!reportType) {
+                showError('Please select a report type');
+                return;
+            }
+            
+            // Show loading
+            showLoading();
+            
+            // Simulate API call
+            setTimeout(() => {
+                hideLoading();
+                
+                // Create a simple chart representation
+                const chartContainer = document.querySelector('.chart-container');
+                chartContainer.innerHTML = `
+                    <div style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 15px;">
+                        <h3 style="font-size: 18px; color: var(--text-dark);">Donation Statistics</h3>
+                        <div style="width: 95%; height: 180px; background-color: #f8f9fa; border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative;">
+                            <div style="width: 95%; height: 80%; display: flex; align-items: flex-end; justify-content: space-around;">
+                                <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                                    <div style="width: 25px; height: 100px; background-color: var(--primary-color); border-radius: 4px;"></div>
+                                    <span style="font-size: 10px; color: var(--text-dark);">Jan</span>
+                                </div>
+                                <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                                    <div style="width: 25px; height: 70px; background-color: var(--primary-color); border-radius: 4px;"></div>
+                                    <span style="font-size: 10px; color: var(--text-dark);">Feb</span>
+                                </div>
+                                <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                                    <div style="width: 25px; height: 120px; background-color: var(--primary-color); border-radius: 4px;"></div>
+                                    <span style="font-size: 10px; color: var(--text-dark);">Mar</span>
+                                </div>
+                                <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                                    <div style="width: 25px; height: 90px; background-color: var(--primary-color); border-radius: 4px;"></div>
+                                    <span style="font-size: 10px; color: var(--text-dark);">Apr</span>
+                                </div>
+                                <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                                    <div style="width: 25px; height: 140px; background-color: var(--primary-color); border-radius: 4px;"></div>
+                                    <span style="font-size: 10px; color: var(--text-dark);">May</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 20px; font-size: 12px; color: var(--text-dark); flex-wrap: wrap; justify-content: center;">
+                            <div>Total Donors: <strong>15</strong></div>
+                            <div>Avg/Month: <strong>3</strong></div>
+                            <div>Most Common: <strong>B+</strong></div>
+                        </div>
+                    </div>
+                `;
+                
+                showSuccess('Report generated successfully!');
+            }, 1500);
+        }
+        
+        // Update Password Strength
+        function updatePasswordStrength() {
+            const password = document.getElementById('newPassword').value;
+            const strengthFill = document.getElementById('strengthFill');
+            const strength = getPasswordStrength(password);
+            
+            // Update strength bar
+            strengthFill.style.width = `${strength * 33.33}%`;
+            
+            // Update color based on strength
+            if (strength === 0) {
+                strengthFill.className = 'strength-fill';
+            } else if (strength === 1) {
+                strengthFill.className = 'strength-fill strength-weak';
+            } else if (strength === 2) {
+                strengthFill.className = 'strength-fill strength-medium';
+            } else if (strength === 3) {
+                strengthFill.className = 'strength-fill strength-strong';
+            }
+        }
+        
+        // Update Reset Password Strength
+        function updateResetPasswordStrength() {
+            const password = document.getElementById('newResetPassword').value;
+            const strengthFill = document.getElementById('resetStrengthFill');
+            const strength = getPasswordStrength(password);
+            
+            // Update strength bar
+            strengthFill.style.width = `${strength * 33.33}%`;
+            
+            // Update color based on strength
+            if (strength === 0) {
+                strengthFill.className = 'strength-fill';
+            } else if (strength === 1) {
+                strengthFill.className = 'strength-fill strength-weak';
+            } else if (strength === 2) {
+                strengthFill.className = 'strength-fill strength-medium';
+            } else if (strength === 3) {
+                strengthFill.className = 'strength-fill strength-strong';
+            }
+        }
+        
+        // Get Password Strength (0-3)
+        function getPasswordStrength(password) {
+            if (!password) return 0;
+            
+            let strength = 0;
+            
+            // Check length
+            if (password.length >= 8) strength++;
+            
+            // Check for uppercase letters
+            if (/[A-Z]/.test(password)) strength++;
+            
+            // Check for numbers
+            if (/\d/.test(password)) strength++;
+            
+            // Check for special characters
+            if (/[!@#$%^&*(),.?":{}|<>]/.test(password)) strength++;
+            
+            // Cap at 3
+            return Math.min(strength, 3);
+        }
+        
+        // Move to Next Input in Verification Code
+        function moveToNext(input, index) {
+            if (input.value.length === 1) {
+                const nextInput = document.querySelectorAll('.code-input')[index];
+                if (nextInput) {
+                    nextInput.focus();
+                }
+            }
+        }
+        
+        // Show Profile Page
+        function showProfilePage() {
+            setActivePage('profile');
+            loadProfile(); // Load profile data when opening
+        }
+        
+        // Show Loading Spinner
+        function showLoading() {
+            loadingSpinner.style.display = 'flex';
+        }
+        
+        // Hide Loading Spinner
+        function hideLoading() {
+            loadingSpinner.style.display = 'none';
+        }
+        
+        // Show Success Message
+        function showSuccess(message) {
+            successMessage.textContent = message;
+            successMessage.style.display = 'block';
+            
+            // Auto-hide after 3 seconds
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 3000);
+        }
+        
+        // Show Error Message
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+            
+            // Auto-hide after 3 seconds
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
