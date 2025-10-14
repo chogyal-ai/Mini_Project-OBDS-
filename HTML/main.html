@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodConnect - Blood Donation Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/user.css">
+    <script src="../javascript/user_script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Login Screen -->
+        <div id="loginScreen" class="login-screen">
+            <div class="login-card">
+                <div class="logo">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <h1>BloodConnect</h1>
+                <p>Connecting donors with those in need</p>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <input type="email" class="form-input" id="loginEmail" placeholder="Email address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-input" id="loginPassword" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-donor">Login</button>
+                </form>
+                <a href="#" class="forgot-password" id="showForgotPassword">Forgot Password?</a>
+                <p style="margin-top: 20px; font-size: 14px; color: var(--gray-600);">
+                    Don't have an account? 
+                    <button id="showRegister" style="color: var(--primary-blue); background: none; border: none; cursor: pointer; text-decoration: underline;">Register</button>
+                </p>
+            </div>
+        </div>
+        <!-- Register Screen -->
+        <div id="registerScreen" class="login-screen" style="display: none;">
+            <div class="login-card">
+                <div class="logo">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h1>Create Account</h1>
+                <p>Join our blood donation community</p>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <input type="text" class="form-input" id="registerName" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" id="registerEmail" placeholder="Email address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-input" id="registerPassword" placeholder="Password" required>
+                        <div class="password-requirements">
+                            <ul>
+                                <li id="length">• At least 8 characters</li>
+                                <li id="uppercase">• At least one uppercase letter</li>
+                                <li id="lowercase">• At least one lowercase letter</li>
+                                <li id="number">• At least one number</li>
+                                <li id="special">• At least one special character</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-donor">Register</button>
+                </form>
+                <button id="backToLogin" style="background: none; border: none; color: var(--gray-600); margin-top: 15px; cursor: pointer;">
+                    ← Back to Login
+                </button>
+            </div>
+        </div>
+        <!-- Forgot Password Screen -->
+        <div id="forgotPasswordScreen" class="login-screen" style="display: none;">
+            <div class="login-card">
+                <div class="logo">
+                    <i class="fas fa-key"></i>
+                </div>
+                <h1>Reset Password</h1>
+                <p>Enter your email to receive a reset code</p>
+                <form id="forgotPasswordForm">
+                    <div class="form-group">
+                        <input type="email" class="form-input" id="forgotEmail" placeholder="Email address" required>
+                    </div>
+                    <button type="submit" class="btn btn-blue">Send Reset Code</button>
+                </form>
+                <button id="backToLoginFromForgot" style="background: none; border: none; color: var(--gray-600); margin-top: 15px; cursor: pointer;">
+                    ← Back to Login
+                </button>
+            </div>
+        </div>
+        <!-- Reset Password Screen -->
+        <div id="resetPasswordScreen" class="login-screen" style="display: none;">
+            <div class="login-card">
+                <div class="logo">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h1>Set New Password</h1>
+                <p>Enter the code sent to your email</p>
+                <form id="resetPasswordForm">
+                    <div class="form-group">
+                        <input type="text" class="form-input" id="resetCode" placeholder="Verification Code" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-input" id="newPassword" placeholder="New Password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-input" id="confirmPassword" placeholder="Confirm New Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-blue">Reset Password</button>
+                </form>
+                <button id="backToLoginFromReset" style="background: none; border: none; color: var(--gray-600); margin-top: 15px; cursor: pointer;">
+                    ← Back to Login
+                </button>
+            </div>
+        </div>
+        <!-- Main App (Hidden initially) -->
+        <div id="mainApp" style="display: none;">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-content">
+                    <div class="header-logo">
+                        <div class="logo">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div class="header-title">BloodConnect</div>
+                    </div>
+                    <div class="user-info">
+                        <div class="notifications" id="notificationsContainer">
+                            <i class="fas fa-bell" style="font-size: 20px; color: var(--gray-600); cursor: pointer;" id="notificationsBtn"></i>
+                            <span class="notification-badge" id="notificationBadge">0</span>
+                            <div class="notifications-dropdown" id="notificationsDropdown">
+                                <div class="notification-header">Notifications</div>
+                                <div id="notificationsList">
+                                    <!-- Notifications will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+                        <img src="https://placehold.co/40x40/ef4444/white?text=U" alt="Profile" class="user-avatar" id="headerAvatar">
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="dropdown-item" id="viewProfileBtn">
+                                <i class="fas fa-user"></i>
+                                <span>View Profile</span>
+                            </div>
+                            <div class="dropdown-item" id="feedbackBtn">
+                                <i class="fas fa-comment-dots"></i>
+                                <span>Feedback</span>
+                            </div>
+                            <div class="dropdown-item" id="aboutBtn">
+                                <i class="fas fa-info-circle"></i>
+                                <span>About Us</span>
+                            </div>
+                            <div class="dropdown-item" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- Role Selection -->
+            <div id="roleSelection" class="role-selection">
+                <button class="role-btn role-btn-donate" id="donateRoleBtn">
+                    <i class="fas fa-heart"></i>
+                    <span>I Want to Donate Blood</span>
+                </button>
+                <button class="role-btn role-btn-request" id="requestRoleBtn">
+                    <i class="fas fa-hands-helping"></i>
+                    <span>I Need Blood</span>
+                </button>
+            </div>
+            <!-- Unified Interface -->
+            <div id="unifiedInterface" style="display: none;">
+                <!-- Back to Role Selection Button -->
+                <button class="back-to-role-btn" id="backToRoleSelection">
+                    <i class="fas fa-arrow-left"></i> Back to Role Selection
+                </button>
+
+                <!-- Navigation -->
+                <nav class="nav-tabs">
+                    <button class="nav-tab active" data-tab="dashboard">
+                        <i class="fas fa-home"></i> Dashboard
+                    </button>
+                    <button class="nav-tab" data-tab="bloodRequests">
+                        <i class="fas fa-users"></i> Blood Requests
+                    </button>
+                    <button class="nav-tab" data-tab="availableDonors">
+                        <i class="fas fa-user-friends"></i> Available Donors
+                    </button>
+                </nav>
+                <!-- Main Content -->
+                <main class="main-content">
+                    <!-- Dashboard Content -->
+                    <div id="dashboardContent">
+                        <div class="section-header">
+                            <h2 class="section-title">Your Activity</h2>
+                            <div id="dashboardActionButtons" style="display: flex; gap: 10px;">
+                                <!-- Buttons will be dynamically shown based on role -->
+                            </div>
+                        </div>
+                        <div class="cards-grid" id="dashboardCards">
+                            <!-- Cards will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <!-- Blood Requests Content -->
+                    <div id="bloodRequestsContent" style="display: none;">
+                        <div class="section-header">
+                            <h2 class="section-title">Blood Requests</h2>
+                            <button class="add-btn" id="addRequestBtn2">
+                                <i class="fas fa-plus"></i> Add Request
+                            </button>
+                        </div>
+                        <div class="filters">
+                            <div class="search-icon">
+                                <i class="fas fa-search"></i>
+                                <input type="text" class="search-input" id="searchInput" placeholder="Search by name, blood type, or location...">
+                            </div>
+                            <select class="filter-select" id="bloodTypeFilter">
+                                <option value="all">All Blood Types</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                            <input type="text" class="search-input" id="locationFilter" placeholder="Filter by location" style="min-width: 180px;">
+                        </div>
+                        <div class="cards-grid" id="bloodRequestsCards">
+                            <!-- Cards will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <!-- Available Donors Content -->
+                    <div id="availableDonorsContent" style="display: none;">
+                        <div class="section-header">
+                            <h2 class="section-title">Available Donors</h2>
+                            <button class="add-btn" id="addDonationBtn2">
+                                <i class="fas fa-plus"></i> Add Donation
+                            </button>
+                        </div>
+                        <div class="filters">
+                            <div class="search-icon">
+                                <i class="fas fa-search"></i>
+                                <input type="text" class="search-input" id="donorSearchInput" placeholder="Search by name, blood type, or location...">
+                            </div>
+                            <select class="filter-select" id="donorBloodTypeFilter">
+                                <option value="all">All Blood Types</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                            <input type="text" class="search-input" id="donorLocationFilter" placeholder="Filter by location" style="min-width: 180px;">
+                        </div>
+                        <div class="cards-grid" id="availableDonorsCards">
+                            <!-- Cards will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <!-- Profile View Content -->
+            <div id="profileContent" style="display: none;">
+                <button class="back-btn" id="backToUnifiedInterface">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </button>
+                <div class="profile-view">
+                    <div class="profile-header">
+                        <div class="profile-avatar-container">
+                            <img src="https://placehold.co/80x80/ef4444/white?text=U" alt="Profile" class="profile-avatar" id="profileAvatar">
+                            <div class="profile-avatar-upload" id="avatarUploadBtn">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <input type="file" id="avatarFileInput" accept="image/*" style="display: none;">
+                        </div>
+                        <div class="profile-info">
+                            <h2 id="profileName">User Name</h2>
+                            <p id="profileEmail">user@example.com</p>
+                            <p id="profileType" style="color: var(--gray-600);">User Type: Both Donor & Requester</p>
+                        </div>
+                    </div>
+                    <div class="profile-details">
+                        <div class="profile-field">
+                            <div class="field-label">Full Name</div>
+                            <div class="field-value" id="profileFullName">John Doe</div>
+                        </div>
+                        <div class="profile-field">
+                            <div class="field-label">Email</div>
+                            <div class="field-value" id="profileEmailValue">john@example.com</div>
+                        </div>
+                        <div class="profile-field">
+                            <div class="field-label">Phone Number</div>
+                            <div class="field-value" id="profilePhone">+1 (555) 123-4567</div>
+                        </div>
+                        <div class="profile-field">
+                            <div class="field-label">Blood Type</div>
+                            <div class="field-value" id="profileBloodType">A+</div>
+                        </div>
+                        <div class="profile-field">
+                            <div class="field-label">Location</div>
+                            <div class="field-value" id="profileLocation">New York</div>
+                        </div>
+                        <div class="profile-field">
+                            <div class="field-label">CID Number</div>
+                            <div class="field-value" id="profileCID">123456789</div>
+                        </div>
+                    </div>
+                    <button class="edit-profile-btn" id="editProfileBtn">
+                        <i class="fas fa-edit"></i> Edit Profile
+                    </button>
+                </div>
+            </div>
+            <!-- Edit Profile Content -->
+            <div id="editProfileContent" style="display: none;">
+                <button class="back-btn" id="backToProfileView">
+                    <i class="fas fa-arrow-left"></i> Back to Profile
+                </button>
+                <div class="profile-view">
+                    <div class="profile-header">
+                        <div class="profile-avatar-container">
+                            <img src="https://placehold.co/80x80/ef4444/white?text=U" alt="Profile" class="profile-avatar" id="editProfileAvatar">
+                            <div class="profile-avatar-upload" id="editAvatarUploadBtn">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <input type="file" id="editAvatarFileInput" accept="image/*" style="display: none;">
+                        </div>
+                        <div class="profile-info">
+                            <h2>Edit Profile</h2>
+                        </div>
+                    </div>
+                    <form id="profileForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-input" id="editFullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-input" id="editEmail" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-input" id="editPhone" placeholder="+1 (555) 123-4567">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Blood Type</label>
+                                <select class="form-input" id="editBloodType">
+                                    <option value="">Select Blood Type</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Location</label>
+                                <input type="text" class="form-input" id="editLocation" placeholder="City or Hospital">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">CID Number</label>
+                                <input type="text" class="form-input" id="editCID" placeholder="Citizenship ID Number" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Change Password</label>
+                            <input type="password" class="form-input" id="editNewPassword" placeholder="Leave blank to keep current password">
+                        </div>
+                        <div class="modal-actions">
+                            <button type="button" class="modal-btn modal-btn-cancel" id="cancelEdit">Cancel</button>
+                            <button type="submit" class="modal-btn modal-btn-submit">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Add Donation Modal -->
+        <div id="addDonationModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Add Blood Donation</h3>
+                    <button class="close-modal" id="closeDonationModal">&times;</button>
+                </div>
+                <form id="donationForm">
+                    <div class="form-group">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-input" id="donorName" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Blood Type</label>
+                            <select class="form-input" id="donorBloodType" required>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Location</label>
+                            <input type="text" class="form-input" id="donorLocation" placeholder="Hospital or clinic name" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Phone</label>
+                            <input type="tel" class="form-input" id="donorPhone" placeholder="+1 (555) 123-4567" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Last Donation</label>
+                            <input type="date" class="form-input" id="lastDonation" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">CID Number</label>
+                        <input type="text" class="form-input" id="donorCID" placeholder="Citizenship ID Number" required>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="modal-btn modal-btn-cancel" id="cancelDonation">Cancel</button>
+                        <button type="submit" class="modal-btn modal-btn-submit">Add Donation</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Add Request Modal -->
+        <div id="addRequestModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Add Blood Request</h3>
+                    <button class="close-modal" id="closeRequestModal">&times;</button>
+                </div>
+                <form id="requestForm">
+                    <div class="form-group">
+                        <label class="form-label">Patient Name</label>
+                        <input type="text" class="form-input" id="patientName" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Blood Type Needed</label>
+                            <select class="form-input" id="requestBloodType" required>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Hospital/Location</label>
+                            <input type="text" class="form-input" id="requestLocation" placeholder="Hospital or clinic name" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Urgency</label>
+                            <select class="form-input" id="requestUrgency" required>
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Contact Number</label>
+                            <input type="tel" class="form-input" id="requestContact" placeholder="+1 (555) 123-4567" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Date Needed</label>
+                        <input type="date" class="form-input" id="dateNeeded" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">CID Number</label>
+                        <input type="text" class="form-input" id="requestCID" placeholder="Citizenship ID Number" required>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="modal-btn modal-btn-cancel" id="cancelRequest">Cancel</button>
+                        <button type="submit" class="modal-btn modal-btn-submit">Add Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Connect Modal -->
+        <div id="connectModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Connect with Donor</h3>
+                    <button class="close-modal" id="closeConnectModal">&times;</button>
+                </div>
+                <div id="connectModalContent">
+                    <!-- Content will be dynamically generated -->
+                </div>
+            </div>
+        </div>
+        <!-- Donate Modal -->
+        <div id="donateModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Donate to Requester</h3>
+                    <button class="close-modal" id="closeDonateModal">&times;</button>
+                </div>
+                <div id="donateModalContent">
+                    <!-- Content will be dynamically generated -->
+                </div>
+            </div>
+        </div>
+        <!-- Delete Confirmation Modal -->
+        <div id="deleteModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Confirm Deletion</h3>
+                    <button class="close-modal" id="closeDeleteModal">&times;</button>
+                </div>
+                <div id="deleteModalContent">
+                    <!-- Content will be dynamically generated -->
+                </div>
+            </div>
+        </div>
+        <!-- Feedback Modal -->
+        <div id="feedbackModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Send Feedback</h3>
+                    <button class="close-modal" id="closeFeedbackModal">&times;</button>
+                </div>
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label class="form-label">Your Feedback</label>
+                        <textarea class="form-input" id="feedbackMessage" rows="6" placeholder="Tell us how we can improve..." required></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="modal-btn modal-btn-cancel" id="cancelFeedback">Cancel</button>
+                        <button type="submit" class="modal-btn modal-btn-submit">Send Feedback</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- About Modal -->
+        <div id="aboutModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">About BloodConnect</h3>
+                    <button class="close-modal" id="closeAboutModal">&times;</button>
+                </div>
+                <div style="line-height: 1.6; color: var(--gray-700);">
+                    <p><strong>BloodConnect</strong> is a platform designed to bridge the gap between blood donors and those in need.</p>
+                    <br>
+                    <p>Our mission is to save lives by making blood donation and request processes simple, efficient, and accessible to everyone.</p>
+                    <br>
+                    <p><strong>Key Features:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Real-time donor and requester matching</li>
+                        <li>Secure messaging between users</li>
+                        <li>Location and blood type based search</li>
+                        <li>Profile management with photo upload</li>
+                        <li>Notification system for new connections</li>
+                    </ul>
+                    <br>
+                    <p>Join our community today and help save lives!</p>
+                </div>
+                <div class="modal-actions" style="margin-top: 20px;">
+                    <button type="button" class="modal-btn modal-btn-cancel" style="flex: 1;" id="closeAbout">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

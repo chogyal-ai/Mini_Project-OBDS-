@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blood Donation System - Admin Panel</title>
+    <title>Online Blood Donation System - Admin Panel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -35,16 +35,16 @@
             overflow: hidden;
         }
 
-        /* === LOGIN PAGE === */
         .login-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        position: relative;
-        margin-left: 600px;
-        width: 400px;
-    }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+}
 
     .login-container::before {
         content: '';
@@ -170,6 +170,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            
         }
 
         .sidebar-logo {
@@ -186,8 +187,9 @@
 
         .sidebar-title {
             font-size: 18px;
-            font-weight: 600;
+            font-weight: bold;
             color: var(--text-dark);
+
         }
 
         .sidebar-menu {
@@ -1139,9 +1141,9 @@
         <div class="sidebar">
             <div class="sidebar-header">
                 <div class="sidebar-logo">
-                    <img src="../images/logo.jpg" alt="Blood Donation System Logo" id="small-logo">
+                    <img src="../images/logo.jpg" alt="Online Blood Donation System Logo" id="small-logo">
                 </div>
-                <div class="sidebar-title">Blood Donation System</div>
+                <div class="sidebar-title">Online Blood Donation System</div>
             </div>
             <div class="sidebar-menu">
                 <a href="#" class="menu-item active" data-page="dashboard">
@@ -1312,10 +1314,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-col">
-                                <label class="form-label" for="donorLastDonation">Last Donation Date</label>
-                                <input type="date" id="donorLastDonation" class="form-input">
-                            </div>
+                           
                             <div class="form-col">
                                 <label class="form-label" for="donorAvailability">Availability</label>
                                 <select id="donorAvailability" class="form-select">
@@ -1395,91 +1394,85 @@
             </div>
 
             <!-- Donor List Page -->
-            <div class="content" id="donorListPage" style="display: none;">
-                <h1 class="page-title">Donor List</h1>
-                <div class="table-container">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Blood Type</th>
-                                <th>Age</th>
-                                <th>Gender</th>
-                                <th>Last Donation</th>
-                                <th>Availability</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Chogyal Wangdi</td>
-                                <td>B+</td>
-                                <td>28</td>
-                                <td>Male</td>
-                                <td>15 May 2023</td>
-                                <td><span style="color: #4cc9f0; font-weight: 600;">Available</span></td>
-                                <td class="table-actions">
-                                    <button class="btn-action btn-view" onclick="viewDonor(this)" data-id="1">View</button>
-                                    <button class="btn-action btn-edit" onclick="editDonor(this)" data-id="1">Edit</button>
-                                    <button class="btn-action btn-delete" onclick="deleteDonor(this)" data-id="1">Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Sonam Jamtsho</td>
-                                <td>B+</td>
-                                <td>32</td>
-                                <td>Female</td>
-                                <td>25 May 2023</td>
-                                <td><span style="color: #4cc9f0; font-weight: 600;">Available</span></td>
-                                <td class="table-actions">
-                                    <button class="btn-action btn-view" onclick="viewDonor(this)" data-id="2">View</button>
-                                    <button class="btn-action btn-edit" onclick="editDonor(this)" data-id="2">Edit</button>
-                                    <button class="btn-action btn-delete" onclick="deleteDonor(this)" data-id="2">Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Dorji Samdrup</td>
-                                <td>B+</td>
-                                <td>45</td>
-                                <td>Male</td>
-                                <td>25 May 2023</td>
-                                <td><span style="color: #4cc9f0; font-weight: 600;">Available</span></td>
-                                <td class="table-actions">
-                                    <button class="btn-action btn-view" onclick="viewDonor(this)" data-id="3">View</button>
-                                    <button class="btn-action btn-edit" onclick="editDonor(this)" data-id="3">Edit</button>
-                                    <button class="btn-action btn-delete" onclick="deleteDonor(this)" data-id="3">Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Norbu Wangmo</td>
-                                <td>B+</td>
-                                <td>29</td>
-                                <td>Female</td>
-                                <td>25 May 2023</td>
-                                <td><span style="color: #4cc9f0; font-weight: 600;">Available</span></td>
-                                <td class="table-actions">
-                                    <button class="btn-action btn-view" onclick="viewDonor(this)" data-id="4">View</button>
-                                    <button class="btn-action btn-edit" onclick="editDonor(this)" data-id="4">Edit</button>
-                                    <button class="btn-action btn-delete" onclick="deleteDonor(this)" data-id="4">Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tenzin Dorji</td>
-                                <td>A+</td>
-                                <td>38</td>
-                                <td>Male</td>
-                                <td>10 May 2023</td>
-                                <td><span style="color: #457b9d; font-weight: 600;">Pending</span></td>
-                                <td class="table-actions">
-                                    <button class="btn-action btn-view" onclick="viewDonor(this)" data-id="5">View</button>
-                                    <button class="btn-action btn-edit" onclick="editDonor(this)" data-id="5">Edit</button>
-                                    <button class="btn-action btn-delete" onclick="deleteDonor(this)" data-id="5">Delete</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+<div class="content" id="donorListPage" style="display: none;">
+    <h1 class="page-title">Donor List</h1>
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Blood Type</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Availability</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Chogyal Wangdi</td>
+                    <td>B+</td>
+                    <td>28</td>
+                    <td>Male</td>
+                    <td><span style="color: #4cc9f0; font-weight: 600;">Available</span></td>
+                    <td class="table-actions">
+                        <button class="btn-action btn-view" onclick="viewDonor(this)" data-id="1">View</button>
+                        <button class="btn-action btn-edit" onclick="editDonor(this)" data-id="1">Edit</button>
+                        <button class="btn-action btn-delete" onclick="deleteDonor(this)" data-id="1">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sonam Jamtsho</td>
+                    <td>B+</td>
+                    <td>32</td>
+                    <td>Female</td>
+                    <td><span style="color: #4cc9f0; font-weight: 600;">Available</span></td>
+                    <td class="table-actions">
+                        <button class="btn-action btn-view" onclick="viewDonor(this)" data-id="2">View</button>
+                        <button class="btn-action btn-edit" onclick="editDonor(this)" data-id="2">Edit</button>
+                        <button class="btn-action btn-delete" onclick="deleteDonor(this)" data-id="2">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dorji Samdrup</td>
+                    <td>B+</td>
+                    <td>45</td>
+                    <td>Male</td>
+                    <td><span style="color: #4cc9f0; font-weight: 600;">Available</span></td>
+                    <td class="table-actions">
+                        <button class="btn-action btn-view" onclick="viewDonor(this)" data-id="3">View</button>
+                        <button class="btn-action btn-edit" onclick="editDonor(this)" data-id="3">Edit</button>
+                        <button class="btn-action btn-delete" onclick="deleteDonor(this)" data-id="3">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Norbu Wangmo</td>
+                    <td>B+</td>
+                    <td>29</td>
+                    <td>Female</td>
+                    <td><span style="color: #4cc9f0; font-weight: 600;">Available</span></td>
+                    <td class="table-actions">
+                        <button class="btn-action btn-view" onclick="viewDonor(this)" data-id="4">View</button>
+                        <button class="btn-action btn-edit" onclick="editDonor(this)" data-id="4">Edit</button>
+                        <button class="btn-action btn-delete" onclick="deleteDonor(this)" data-id="4">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tenzin Dorji</td>
+                    <td>A+</td>
+                    <td>38</td>
+                    <td>Male</td>
+                    <td><span style="color: #457b9d; font-weight: 600;">Pending</span></td>
+                    <td class="table-actions">
+                        <button class="btn-action btn-view" onclick="viewDonor(this)" data-id="5">View</button>
+                        <button class="btn-action btn-edit" onclick="editDonor(this)" data-id="5">Edit</button>
+                        <button class="btn-action btn-delete" onclick="deleteDonor(this)" data-id="5">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
             <!-- Generate Report Page -->
             <div class="content" id="generateReportPage" style="display: none;">
@@ -2107,7 +2100,6 @@
             const donorPhone = document.getElementById('donorPhone').value.trim();
             const donorEmail = document.getElementById('donorEmail').value.trim();
             const donorAddress = document.getElementById('donorAddress').value.trim();
-            const donorLastDonation = document.getElementById('donorLastDonation').value;
             const donorAvailability = document.getElementById('donorAvailability').value;
             
             // Validate required fields
