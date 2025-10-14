@@ -54,6 +54,9 @@
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
+            background-image: url(../images/logo.jpg);
+            background-position: center;
+            background-size: cover;
         }
         .logo i {
             color: var(--white);
